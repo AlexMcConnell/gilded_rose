@@ -5,7 +5,7 @@ require_relative "../lib/gilded_rose"
 RSpec.describe GildedRose do
   context "Normal Item" do
     it "before sell date" do
-      gilded_rose = GildedRose.new(name: "Normal Item", days_remaining: 5, quality: 10)
+      gilded_rose = GildedRose.new(name: "foo", days_remaining: 5, quality: 10)
 
       gilded_rose.tick
 
@@ -13,7 +13,7 @@ RSpec.describe GildedRose do
     end
 
     it "on sell date" do
-      gilded_rose = GildedRose.new(name: "Normal Item", days_remaining: 0, quality: 10)
+      gilded_rose = GildedRose.new(name: "foo", days_remaining: 0, quality: 10)
 
       gilded_rose.tick
 
@@ -21,7 +21,7 @@ RSpec.describe GildedRose do
     end
 
     it "after sell date" do
-      gilded_rose = GildedRose.new(name: "Normal Item", days_remaining: -10, quality: 10)
+      gilded_rose = GildedRose.new(name: "foo", days_remaining: -10, quality: 10)
 
       gilded_rose.tick
 
@@ -29,7 +29,7 @@ RSpec.describe GildedRose do
     end
 
     it "of zero quality" do
-      gilded_rose = GildedRose.new(name: "Normal Item", days_remaining: 5, quality: 0)
+      gilded_rose = GildedRose.new(name: "foo", days_remaining: 5, quality: 0)
 
       gilded_rose.tick
 
