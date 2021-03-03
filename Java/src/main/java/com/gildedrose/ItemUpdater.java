@@ -8,7 +8,7 @@ public class ItemUpdater {
         this.item = item;
     }
 
-    public final void endOfDay() {
+    public final void endOfDayUpdate() {
         updateSellIn();
         updateQuality();
         clampQuality();
