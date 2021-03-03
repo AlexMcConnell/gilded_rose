@@ -8,14 +8,17 @@ public class SulfurasUpdater extends ItemUpdater {
 
     @Override
     protected void updateSellIn() {
+        // Intentially blank. Item does not change SellIn time.
     }
 
     @Override
     protected void updateQuality() {
+        // Intentially blank. Item does not change quality.
     }
-    
+
     @Override
-    protected void clampQuality(){
+    protected void clampQuality() {
+        // Always a set quality
         item.quality = 80;
     }
 }

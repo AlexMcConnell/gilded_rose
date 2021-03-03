@@ -24,6 +24,7 @@ public class Item {
     }
     
     public void endOfDayUpdate(){
+        // Select correct updater based on item name.
         ItemUpdater updater;
         switch (this.name) {
             case AGED_BRIE:
