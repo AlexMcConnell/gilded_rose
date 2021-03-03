@@ -7,13 +7,11 @@ public class AgedBrieUpdater extends ItemUpdater {
     }
 
     @Override
-    public void endOfDay() {
-        item.sellIn--;
-        int qualityChange = 1;
+    protected void updateQuality() {
         if (item.sellIn < 0) {
-            qualityChange *= 2;
+            item.quality += 2;
+        }else{
+            item.quality += 1;
         }
-        item.quality = Math.min(50, Math.max(0, item.quality + qualityChange));
     }
-
 }
