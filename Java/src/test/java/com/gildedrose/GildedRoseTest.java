@@ -16,12 +16,39 @@ class GildedRoseTest {
     }
 
     @Test
+    void normalItem_WithMinQuality() {
+        Item[] items = new Item[] { new Item("foo", 5, 0) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(4, app.items[0].sellIn);
+        assertEquals(0, app.items[0].quality);
+    }
+
+    @Test
     void normalItem_OnSellDate() {
         Item[] items = new Item[] { new Item("foo", 0, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(-1, app.items[0].sellIn);
         assertEquals(8, app.items[0].quality);
+    }
+
+    @Test
+    void normalItem_OnSellDateWithMinQuality() {
+        Item[] items = new Item[] { new Item("foo", 0, 0) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(-1, app.items[0].sellIn);
+        assertEquals(0, app.items[0].quality);
+    }
+
+    @Test
+    void normalItem_OnSellDateNearMinQuality() {
+        Item[] items = new Item[] { new Item("foo", 0, 1) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(-1, app.items[0].sellIn);
+        assertEquals(0, app.items[0].quality);
     }
 
     @Test
@@ -34,11 +61,20 @@ class GildedRoseTest {
     }
 
     @Test
-    void normalItem_OfZeroQuality() {
-        Item[] items = new Item[] { new Item("foo", 5, 0) };
+    void normalItem_AfterSellDateWithMinQuality() {
+        Item[] items = new Item[] { new Item("foo", -10, 0) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(4, app.items[0].sellIn);
+        assertEquals(-11, app.items[0].sellIn);
+        assertEquals(0, app.items[0].quality);
+    }
+
+    @Test
+    void normalItem_AfterSellDateNearMinQuality() {
+        Item[] items = new Item[] { new Item("foo", -10, 1) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(-11, app.items[0].sellIn);
         assertEquals(0, app.items[0].quality);
     }
 
@@ -70,8 +106,8 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_OnSellDateNearMaxQuality() {
-        Item[] items = new Item[] { new Item("Aged Brie", 0, 49) };
+    void agedBrie_OnSellDateWithMaxQuality() {
+        Item[] items = new Item[] { new Item("Aged Brie", 0, 50) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(-1, app.items[0].sellIn);
@@ -79,8 +115,8 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_OnSellDateWithMaxQuality() {
-        Item[] items = new Item[] { new Item("Aged Brie", 0, 50) };
+    void agedBrie_OnSellDateNearMaxQuality() {
+        Item[] items = new Item[] { new Item("Aged Brie", 0, 49) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(-1, app.items[0].sellIn);
@@ -99,6 +135,15 @@ class GildedRoseTest {
     @Test
     void agedBrie_AfterSellDateWithMaxQuality() {
         Item[] items = new Item[] { new Item("Aged Brie", -10, 50) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(-11, app.items[0].sellIn);
+        assertEquals(50, app.items[0].quality);
+    }
+
+    @Test
+    void agedBrie_AfterSellDateNearMaxQuality() {
+        Item[] items = new Item[] { new Item("Aged Brie", -10, 49) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(-11, app.items[0].sellIn);
@@ -169,6 +214,15 @@ class GildedRoseTest {
     }
 
     @Test
+    void backstagePass_MediumCloseToSellDateUpperBoundNearMaxQuality() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(9, app.items[0].sellIn);
+        assertEquals(50, app.items[0].quality);
+    }
+
+    @Test
     void backstagePass_MediumCloseToSellDateLowerBound() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10) };
         GildedRose app = new GildedRose(items);
@@ -180,6 +234,15 @@ class GildedRoseTest {
     @Test
     void backstagePass_MediumCloseToSellDateLowerBoundAtMaxQuality() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 6, 50) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(5, app.items[0].sellIn);
+        assertEquals(50, app.items[0].quality);
+    }
+
+    @Test
+    void backstagePass_MediumCloseToSellDateLowerBoundNearMaxQuality() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 6, 49) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(5, app.items[0].sellIn);
@@ -205,6 +268,15 @@ class GildedRoseTest {
     }
 
     @Test
+    void backstagePass_VeryCloseToSellDateUpperBoundNearMaxQuality() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(4, app.items[0].sellIn);
+        assertEquals(50, app.items[0].quality);
+    }
+
+    @Test
     void backstagePass_VeryCloseToSellDateLowerBound() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10) };
         GildedRose app = new GildedRose(items);
@@ -216,6 +288,15 @@ class GildedRoseTest {
     @Test
     void backstagePass_VeryCloseToSellDateLowerBoundAtMaxQuality() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 1, 50) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, app.items[0].sellIn);
+        assertEquals(50, app.items[0].quality);
+    }
+
+    @Test
+    void backstagePass_VeryCloseToSellDateLowerBoundNearMaxQuality() {
+        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 1, 48) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(0, app.items[0].sellIn);
