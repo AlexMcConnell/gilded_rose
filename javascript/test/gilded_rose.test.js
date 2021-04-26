@@ -11,6 +11,15 @@ describe("Gilded Rose", () => {
       expect(gildedRose.items[0].quality).toBe(9);
     });
 
+    it("with min quality", () => {
+      const gildedRose = new Shop([new Item("foo", 5, 0)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].quality).toBe(0);
+    });
+
     it("on sell date", () => {
       const gildedRose = new Shop([new Item("foo", 0, 10)]);
 
@@ -18,6 +27,24 @@ describe("Gilded Rose", () => {
 
       expect(gildedRose.items[0].sellIn).toBe(-1);
       expect(gildedRose.items[0].quality).toBe(8);
+    });
+
+    it("on sell date with min quality", () => {
+      const gildedRose = new Shop([new Item("foo", 0, 0)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].quality).toBe(0);
+    });
+
+    it("on sell date near min quality", () => {
+      const gildedRose = new Shop([new Item("foo", 0, 1)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].quality).toBe(0);
     });
 
     it("after sell date", () => {
@@ -29,12 +56,21 @@ describe("Gilded Rose", () => {
       expect(gildedRose.items[0].quality).toBe(8);
     });
 
-    it("of zero quality", () => {
-      const gildedRose = new Shop([new Item("foo", 5, 0)]);
+    it("after sell date with min quality", () => {
+      const gildedRose = new Shop([new Item("foo", -10, 0)]);
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].quality).toBe(0);
+    });
+
+    it("after sell date near min quality", () => {
+      const gildedRose = new Shop([new Item("foo", -10, 1)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(-11);
       expect(gildedRose.items[0].quality).toBe(0);
     });
   });
@@ -67,8 +103,8 @@ describe("Gilded Rose", () => {
       expect(gildedRose.items[0].quality).toBe(12);
     });
 
-    it("on sell date near max quality", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", 0, 49)]);
+    it("on sell date with max quality", () => {
+      const gildedRose = new Shop([new Item("Aged Brie", 0, 50)]);
 
       gildedRose.updateQuality();
 
@@ -76,8 +112,8 @@ describe("Gilded Rose", () => {
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
-    it("on sell date with max quality", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", 0, 50)]);
+    it("on sell date near max quality", () => {
+      const gildedRose = new Shop([new Item("Aged Brie", 0, 49)]);
 
       gildedRose.updateQuality();
 
@@ -96,6 +132,15 @@ describe("Gilded Rose", () => {
 
     it("after sell date with max quality", () => {
       const gildedRose = new Shop([new Item("Aged Brie", -10, 50)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].quality).toBe(50);
+    });
+
+    it("after sell date near max quality", () => {
+      const gildedRose = new Shop([new Item("Aged Brie", -10, 49)]);
 
       gildedRose.updateQuality();
 
@@ -170,6 +215,15 @@ describe("Gilded Rose", () => {
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
+    it("medium close to sell date upper bound near max quality", () => {
+      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(9);
+      expect(gildedRose.items[0].quality).toBe(50);
+    });
+
     it("medium close to sell date lower bound", () => {
       const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10)]);
 
@@ -181,6 +235,15 @@ describe("Gilded Rose", () => {
 
     it("medium close to sell date lower bound at max quality", () => {
       const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 50)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(5);
+      expect(gildedRose.items[0].quality).toBe(50);
+    });
+
+    it("medium close to sell date lower bound near max quality", () => {
+      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 49)]);
 
       gildedRose.updateQuality();
 
@@ -206,6 +269,15 @@ describe("Gilded Rose", () => {
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
+    it("very close to sell date upper bound near max quality", () => {
+      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].quality).toBe(50);
+    });
+
     it("very close to sell date lower bound", () => {
       const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10)]);
 
@@ -217,6 +289,15 @@ describe("Gilded Rose", () => {
 
     it("very close to sell date lower bound at max quality", () => {
       const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 50)]);
+
+      gildedRose.updateQuality();
+
+      expect(gildedRose.items[0].sellIn).toBe(0);
+      expect(gildedRose.items[0].quality).toBe(50);
+    });
+
+    it("very close to sell date lower bound near max quality", () => {
+      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 48)]);
 
       gildedRose.updateQuality();
 
