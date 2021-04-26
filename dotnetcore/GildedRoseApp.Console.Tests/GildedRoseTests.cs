@@ -19,6 +19,17 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
+        public void normalItem_WithMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 5, Quality = 0 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(4, app.GetItems()[0].SellIn);
+            Assert.Equal(0, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
         public void normalItem_OnSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 10 } };
@@ -27,6 +38,28 @@ namespace GildedRoseApp.Console.Tests
 
             Assert.Equal(-1, app.GetItems()[0].SellIn);
             Assert.Equal(8, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
+        public void normalItem_OnSellDateWithMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(-1, app.GetItems()[0].SellIn);
+            Assert.Equal(0, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
+        public void normalItem_OnSellDateNearMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 1 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(-1, app.GetItems()[0].SellIn);
+            Assert.Equal(0, app.GetItems()[0].Quality);
         }
 
         [Fact]
@@ -41,13 +74,24 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void normalItem_OfZeroQuality()
+        public void normalItem_AfterSellDateWithMinQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 5, Quality = 0 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = -10, Quality = 0 } };
             var app = new Program(Items);
             app.UpdateQuality();
 
-            Assert.Equal(4, app.GetItems()[0].SellIn);
+            Assert.Equal(-11, app.GetItems()[0].SellIn);
+            Assert.Equal(0, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
+        public void normalItem_AfterSellDateNearMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = -10, Quality = 1 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(-11, app.GetItems()[0].SellIn);
             Assert.Equal(0, app.GetItems()[0].Quality);
         }
 
@@ -85,9 +129,9 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_OnSellDateNearMaxQuality()
+        public void agedBrie_OnSellDateWithMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 49 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 50 } };
             var app = new Program(Items);
             app.UpdateQuality();
 
@@ -96,9 +140,9 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_OnSellDateWithMaxQuality()
+        public void agedBrie_OnSellDateNearMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 0, Quality = 49 } };
             var app = new Program(Items);
             app.UpdateQuality();
 
@@ -121,6 +165,17 @@ namespace GildedRoseApp.Console.Tests
         public void agedBrie_AfterSellDateWithMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = -10, Quality = 50 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(-11, app.GetItems()[0].SellIn);
+            Assert.Equal(50, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
+        public void agedBrie_AfterSellDateNearMaxQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = -10, Quality = 49 } };
             var app = new Program(Items);
             app.UpdateQuality();
 
@@ -206,6 +261,17 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
+        public void backstagePass_MediumCloseToSellDateUpperBoundNearMaxQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 49 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(9, app.GetItems()[0].SellIn);
+            Assert.Equal(50, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
         public void backstagePass_MediumCloseToSellDateLowerBound()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 6, Quality = 10 } };
@@ -220,6 +286,17 @@ namespace GildedRoseApp.Console.Tests
         public void backstagePass_MediumCloseToSellDateLowerBoundAtMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 6, Quality = 50 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(5, app.GetItems()[0].SellIn);
+            Assert.Equal(50, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
+        public void backstagePass_MediumCloseToSellDateLowerBoundNearMaxQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 6, Quality = 49 } };
             var app = new Program(Items);
             app.UpdateQuality();
 
@@ -250,6 +327,17 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
+        public void backstagePass_VeryCloseToSellDateUpperBoundNearMaxQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 48 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(4, app.GetItems()[0].SellIn);
+            Assert.Equal(50, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
         public void backstagePass_VeryCloseToSellDateLowerBound()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 1, Quality = 10 } };
@@ -264,6 +352,17 @@ namespace GildedRoseApp.Console.Tests
         public void backstagePass_VeryCloseToSellDateLowerBoundAtMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 1, Quality = 50 } };
+            var app = new Program(Items);
+            app.UpdateQuality();
+
+            Assert.Equal(0, app.GetItems()[0].SellIn);
+            Assert.Equal(50, app.GetItems()[0].Quality);
+        }
+
+        [Fact]
+        public void backstagePass_VeryCloseToSellDateLowerBoundNearMaxQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 1, Quality = 48 } };
             var app = new Program(Items);
             app.UpdateQuality();
 
