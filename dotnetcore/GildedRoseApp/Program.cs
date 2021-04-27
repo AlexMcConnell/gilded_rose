@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 namespace ConsoleApplication
 {
     public class Item
@@ -14,7 +13,7 @@ namespace ConsoleApplication
         {
             Console.WriteLine("Dummy Main");
         }
-        public void UpdateQuality(Item item)
+        public void ProcessEndOfDay(Item item)
         {
             if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
             {

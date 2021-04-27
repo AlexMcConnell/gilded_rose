@@ -12,7 +12,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "foo", SellIn = 5, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(4, item.SellIn);
             Assert.Equal(9, item.Quality);
@@ -23,7 +23,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "foo", SellIn = 5, Quality = 0 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(4, item.SellIn);
             Assert.Equal(0, item.Quality);
@@ -34,7 +34,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "foo", SellIn = 0, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-1, item.SellIn);
             Assert.Equal(8, item.Quality);
@@ -45,7 +45,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "foo", SellIn = 0, Quality = 0 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-1, item.SellIn);
             Assert.Equal(0, item.Quality);
@@ -56,7 +56,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "foo", SellIn = 0, Quality = 1 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-1, item.SellIn);
             Assert.Equal(0, item.Quality);
@@ -67,7 +67,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "foo", SellIn = -10, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-11, item.SellIn);
             Assert.Equal(8, item.Quality);
@@ -78,7 +78,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "foo", SellIn = -10, Quality = 0 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-11, item.SellIn);
             Assert.Equal(0, item.Quality);
@@ -89,7 +89,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "foo", SellIn = -10, Quality = 1 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-11, item.SellIn);
             Assert.Equal(0, item.Quality);
@@ -100,7 +100,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Aged Brie", SellIn = 5, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(4, item.SellIn);
             Assert.Equal(11, item.Quality);
@@ -111,7 +111,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Aged Brie", SellIn = 5, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(4, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -122,7 +122,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Aged Brie", SellIn = 0, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-1, item.SellIn);
             Assert.Equal(12, item.Quality);
@@ -133,7 +133,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Aged Brie", SellIn = 0, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-1, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -144,7 +144,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Aged Brie", SellIn = 0, Quality = 49 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-1, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -155,7 +155,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Aged Brie", SellIn = -10, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-11, item.SellIn);
             Assert.Equal(12, item.Quality);
@@ -166,7 +166,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Aged Brie", SellIn = -10, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-11, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -177,7 +177,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Aged Brie", SellIn = -10, Quality = 49 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-11, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -188,7 +188,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 5, Quality = 80 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(5, item.SellIn);
             Assert.Equal(80, item.Quality);
@@ -199,7 +199,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(0, item.SellIn);
             Assert.Equal(80, item.Quality);
@@ -210,7 +210,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = -10, Quality = 80 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-10, item.SellIn);
             Assert.Equal(80, item.Quality);
@@ -221,7 +221,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 11, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(10, item.SellIn);
             Assert.Equal(11, item.Quality);
@@ -232,7 +232,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 11, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(10, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -243,7 +243,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(9, item.SellIn);
             Assert.Equal(12, item.Quality);
@@ -254,7 +254,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(9, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -265,7 +265,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 49 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(9, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -276,7 +276,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 6, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(5, item.SellIn);
             Assert.Equal(12, item.Quality);
@@ -287,7 +287,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 6, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(5, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -298,7 +298,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 6, Quality = 49 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(5, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -309,7 +309,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(4, item.SellIn);
             Assert.Equal(13, item.Quality);
@@ -320,7 +320,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(4, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -331,7 +331,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 48 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(4, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -342,7 +342,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 1, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(0, item.SellIn);
             Assert.Equal(13, item.Quality);
@@ -353,7 +353,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 1, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(0, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -364,7 +364,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 1, Quality = 48 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(0, item.SellIn);
             Assert.Equal(50, item.Quality);
@@ -375,7 +375,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 50 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-1, item.SellIn);
             Assert.Equal(0, item.Quality);
@@ -386,7 +386,7 @@ namespace GildedRoseApp.Console.Tests
         {
             Item item = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -10, Quality = 10 };
             var app = new Program();
-            app.UpdateQuality(item);
+            app.ProcessEndOfDay(item);
 
             Assert.Equal(-11, item.SellIn);
             Assert.Equal(0, item.Quality);
