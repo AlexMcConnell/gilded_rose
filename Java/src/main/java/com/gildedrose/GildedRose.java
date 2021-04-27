@@ -2,7 +2,7 @@ package com.gildedrose;
 
 class GildedRose {
 
-    public void updateQuality(Item item) {
+    public void processEndOfDay(Item item) {
         if (!item.name.equals("Aged Brie")
                 && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (item.quality > 0) {
