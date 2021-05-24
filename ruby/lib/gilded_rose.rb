@@ -1,53 +1,45 @@
 class GildedRose
-  attr_reader :name, :days_remaining, :quality
-
-  def initialize(name:, days_remaining:, quality:)
-    @name = name
-    @days_remaining = days_remaining
-    @quality = quality
-  end
-
-  def tick
-    if @name != "Aged Brie" and @name != "Backstage passes to a TAFKAL80ETC concert"
-      if @quality > 0
-        if @name != "Sulfuras, Hand of Ragnaros"
-          @quality = @quality - 1
+  def process_end_of_day(item)
+    if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
+      if item.quality > 0
+        if item.name != "Sulfuras, Hand of Ragnaros"
+          item.quality = item.quality - 1
         end
       end
     else
-      if @quality < 50
-        @quality = @quality + 1
-        if @name == "Backstage passes to a TAFKAL80ETC concert"
-          if @days_remaining < 11
-            if @quality < 50
-              @quality = @quality + 1
+      if item.quality < 50
+        item.quality = item.quality + 1
+        if item.name == "Backstage passes to a TAFKAL80ETC concert"
+          if item.days_remaining < 11
+            if item.quality < 50
+              item.quality = item.quality + 1
             end
           end
-          if @days_remaining < 6
-            if @quality < 50
-              @quality = @quality + 1
+          if item.days_remaining < 6
+            if item.quality < 50
+              item.quality = item.quality + 1
             end
           end
         end
       end
     end
-    if @name != "Sulfuras, Hand of Ragnaros"
-      @days_remaining = @days_remaining - 1
+    if item.name != "Sulfuras, Hand of Ragnaros"
+      item.days_remaining = item.days_remaining - 1
     end
-    if @days_remaining < 0
-      if @name != "Aged Brie"
-        if @name != "Backstage passes to a TAFKAL80ETC concert"
-          if @quality > 0
-            if @name != "Sulfuras, Hand of Ragnaros"
-              @quality = @quality - 1
+    if item.days_remaining < 0
+      if item.name != "Aged Brie"
+        if item.name != "Backstage passes to a TAFKAL80ETC concert"
+          if item.quality > 0
+            if item.name != "Sulfuras, Hand of Ragnaros"
+              item.quality = item.quality - 1
             end
           end
         else
-          @quality = @quality - @quality
+          item.quality = item.quality - item.quality
         end
       else
-        if @quality < 50
-          @quality = @quality + 1
+        if item.quality < 50
+          item.quality = item.quality + 1
         end
       end
     end
