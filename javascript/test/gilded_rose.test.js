@@ -1,9 +1,10 @@
-const {Shop, Item} = require("../src/gilded_rose");
+const {GildedRose} = require("../src/gilded_rose");
+const {Item} = require("../src/item");
 
 describe("Gilded Rose", () => {
   describe("Normal Item", () => {
     it("before sell date", () => {
-      const gildedRose = new Shop([new Item("foo", 5, 10)]);
+      const gildedRose = new GildedRose([new Item("foo", 5, 10)]);
 
       gildedRose.updateQuality();
 
@@ -12,7 +13,7 @@ describe("Gilded Rose", () => {
     });
 
     it("with min quality", () => {
-      const gildedRose = new Shop([new Item("foo", 5, 0)]);
+      const gildedRose = new GildedRose([new Item("foo", 5, 0)]);
 
       gildedRose.updateQuality();
 
@@ -21,7 +22,7 @@ describe("Gilded Rose", () => {
     });
 
     it("on sell date", () => {
-      const gildedRose = new Shop([new Item("foo", 0, 10)]);
+      const gildedRose = new GildedRose([new Item("foo", 0, 10)]);
 
       gildedRose.updateQuality();
 
@@ -30,7 +31,7 @@ describe("Gilded Rose", () => {
     });
 
     it("on sell date with min quality", () => {
-      const gildedRose = new Shop([new Item("foo", 0, 0)]);
+      const gildedRose = new GildedRose([new Item("foo", 0, 0)]);
 
       gildedRose.updateQuality();
 
@@ -39,7 +40,7 @@ describe("Gilded Rose", () => {
     });
 
     it("on sell date near min quality", () => {
-      const gildedRose = new Shop([new Item("foo", 0, 1)]);
+      const gildedRose = new GildedRose([new Item("foo", 0, 1)]);
 
       gildedRose.updateQuality();
 
@@ -48,7 +49,7 @@ describe("Gilded Rose", () => {
     });
 
     it("after sell date", () => {
-      const gildedRose = new Shop([new Item("foo", -10, 10)]);
+      const gildedRose = new GildedRose([new Item("foo", -10, 10)]);
 
       gildedRose.updateQuality();
 
@@ -57,7 +58,7 @@ describe("Gilded Rose", () => {
     });
 
     it("after sell date with min quality", () => {
-      const gildedRose = new Shop([new Item("foo", -10, 0)]);
+      const gildedRose = new GildedRose([new Item("foo", -10, 0)]);
 
       gildedRose.updateQuality();
 
@@ -66,7 +67,7 @@ describe("Gilded Rose", () => {
     });
 
     it("after sell date near min quality", () => {
-      const gildedRose = new Shop([new Item("foo", -10, 1)]);
+      const gildedRose = new GildedRose([new Item("foo", -10, 1)]);
 
       gildedRose.updateQuality();
 
@@ -77,7 +78,7 @@ describe("Gilded Rose", () => {
 
   describe("Aged Brie", () => {
     it("before sell date", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", 5, 10)]);
+      const gildedRose = new GildedRose([new Item("Aged Brie", 5, 10)]);
 
       gildedRose.updateQuality();
 
@@ -86,7 +87,7 @@ describe("Gilded Rose", () => {
     });
 
     it("with max quality", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", 5, 50)]);
+      const gildedRose = new GildedRose([new Item("Aged Brie", 5, 50)]);
 
       gildedRose.updateQuality();
 
@@ -95,7 +96,7 @@ describe("Gilded Rose", () => {
     });
 
     it("on sell date", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", 0, 10)]);
+      const gildedRose = new GildedRose([new Item("Aged Brie", 0, 10)]);
 
       gildedRose.updateQuality();
 
@@ -104,7 +105,7 @@ describe("Gilded Rose", () => {
     });
 
     it("on sell date with max quality", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", 0, 50)]);
+      const gildedRose = new GildedRose([new Item("Aged Brie", 0, 50)]);
 
       gildedRose.updateQuality();
 
@@ -113,7 +114,7 @@ describe("Gilded Rose", () => {
     });
 
     it("on sell date near max quality", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", 0, 49)]);
+      const gildedRose = new GildedRose([new Item("Aged Brie", 0, 49)]);
 
       gildedRose.updateQuality();
 
@@ -122,7 +123,7 @@ describe("Gilded Rose", () => {
     });
 
     it("after sell date", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", -10, 10)]);
+      const gildedRose = new GildedRose([new Item("Aged Brie", -10, 10)]);
 
       gildedRose.updateQuality();
 
@@ -131,7 +132,7 @@ describe("Gilded Rose", () => {
     });
 
     it("after sell date with max quality", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", -10, 50)]);
+      const gildedRose = new GildedRose([new Item("Aged Brie", -10, 50)]);
 
       gildedRose.updateQuality();
 
@@ -140,7 +141,7 @@ describe("Gilded Rose", () => {
     });
 
     it("after sell date near max quality", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", -10, 49)]);
+      const gildedRose = new GildedRose([new Item("Aged Brie", -10, 49)]);
 
       gildedRose.updateQuality();
 
@@ -151,7 +152,7 @@ describe("Gilded Rose", () => {
 
   describe("Sulfuras, Hand of Ragnaros", () => {
     it("before sell date", () => {
-      const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", 5, 80)]);
+      const gildedRose = new GildedRose([new Item("Sulfuras, Hand of Ragnaros", 5, 80)]);
 
       gildedRose.updateQuality();
 
@@ -160,7 +161,7 @@ describe("Gilded Rose", () => {
     });
 
     it("on sell date", () => {
-      const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", 0, 80)]);
+      const gildedRose = new GildedRose([new Item("Sulfuras, Hand of Ragnaros", 0, 80)]);
 
       gildedRose.updateQuality();
 
@@ -169,7 +170,7 @@ describe("Gilded Rose", () => {
     });
 
     it("after sell date", () => {
-      const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", -10, 80)]);
+      const gildedRose = new GildedRose([new Item("Sulfuras, Hand of Ragnaros", -10, 80)]);
 
       gildedRose.updateQuality();
 
@@ -180,7 +181,7 @@ describe("Gilded Rose", () => {
 
   describe("Backstage passes to a TAFKAL80ETC concert", () => {
     it("long before sell date", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 11, 10)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 11, 10)]);
 
       gildedRose.updateQuality();
 
@@ -189,7 +190,7 @@ describe("Gilded Rose", () => {
     });
 
     it("long before sell date at max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 11, 50)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 11, 50)]);
 
       gildedRose.updateQuality();
 
@@ -198,7 +199,7 @@ describe("Gilded Rose", () => {
     });
 
     it("medium close to sell date upper bound", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 10, 10)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 10, 10)]);
 
       gildedRose.updateQuality();
 
@@ -207,7 +208,7 @@ describe("Gilded Rose", () => {
     });
 
     it("medium close to sell date upper bound at max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 10, 50)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 10, 50)]);
 
       gildedRose.updateQuality();
 
@@ -216,7 +217,7 @@ describe("Gilded Rose", () => {
     });
 
     it("medium close to sell date upper bound near max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)]);
 
       gildedRose.updateQuality();
 
@@ -225,7 +226,7 @@ describe("Gilded Rose", () => {
     });
 
     it("medium close to sell date lower bound", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10)]);
 
       gildedRose.updateQuality();
 
@@ -234,7 +235,7 @@ describe("Gilded Rose", () => {
     });
 
     it("medium close to sell date lower bound at max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 50)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 50)]);
 
       gildedRose.updateQuality();
 
@@ -243,7 +244,7 @@ describe("Gilded Rose", () => {
     });
 
     it("medium close to sell date lower bound near max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 49)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 49)]);
 
       gildedRose.updateQuality();
 
@@ -252,7 +253,7 @@ describe("Gilded Rose", () => {
     });
 
     it("very close to sell date upper bound", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10)]);
 
       gildedRose.updateQuality();
 
@@ -261,7 +262,7 @@ describe("Gilded Rose", () => {
     });
 
     it("very close to sell date upper bound at max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50)]);
 
       gildedRose.updateQuality();
 
@@ -270,7 +271,7 @@ describe("Gilded Rose", () => {
     });
 
     it("very close to sell date upper bound near max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)]);
 
       gildedRose.updateQuality();
 
@@ -279,7 +280,7 @@ describe("Gilded Rose", () => {
     });
 
     it("very close to sell date lower bound", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10)]);
 
       gildedRose.updateQuality();
 
@@ -288,7 +289,7 @@ describe("Gilded Rose", () => {
     });
 
     it("very close to sell date lower bound at max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 50)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 50)]);
 
       gildedRose.updateQuality();
 
@@ -297,7 +298,7 @@ describe("Gilded Rose", () => {
     });
 
     it("very close to sell date lower bound near max quality", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 48)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 1, 48)]);
 
       gildedRose.updateQuality();
 
@@ -306,7 +307,7 @@ describe("Gilded Rose", () => {
     });
 
     it("on sell date", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10)]);
 
       gildedRose.updateQuality();
 
@@ -315,7 +316,7 @@ describe("Gilded Rose", () => {
     });
 
     it("after sell date", () => {
-      const gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", -10, 10)]);
+      const gildedRose = new GildedRose([new Item("Backstage passes to a TAFKAL80ETC concert", -10, 10)]);
 
       gildedRose.updateQuality();
 
