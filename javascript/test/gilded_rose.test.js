@@ -7,7 +7,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("foo", 5, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(4);
       expect(item.quality).toBe(9);
@@ -17,7 +17,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("foo", 5, 0);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(4);
       expect(item.quality).toBe(0);
@@ -27,7 +27,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("foo", 0, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-1);
       expect(item.quality).toBe(8);
@@ -37,7 +37,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("foo", 0, 0);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-1);
       expect(item.quality).toBe(0);
@@ -47,7 +47,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("foo", 0, 1);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-1);
       expect(item.quality).toBe(0);
@@ -57,7 +57,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("foo", -10, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-11);
       expect(item.quality).toBe(8);
@@ -67,7 +67,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("foo", -10, 0);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-11);
       expect(item.quality).toBe(0);
@@ -77,7 +77,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("foo", -10, 1);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-11);
       expect(item.quality).toBe(0);
@@ -89,7 +89,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Aged Brie", 5, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(4);
       expect(item.quality).toBe(11);
@@ -99,7 +99,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Aged Brie", 5, 50);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(4);
       expect(item.quality).toBe(50);
@@ -109,7 +109,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Aged Brie", 0, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-1);
       expect(item.quality).toBe(12);
@@ -119,7 +119,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Aged Brie", 0, 50);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-1);
       expect(item.quality).toBe(50);
@@ -129,7 +129,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Aged Brie", 0, 49);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-1);
       expect(item.quality).toBe(50);
@@ -139,7 +139,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Aged Brie", -10, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-11);
       expect(item.quality).toBe(12);
@@ -149,7 +149,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Aged Brie", -10, 50);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-11);
       expect(item.quality).toBe(50);
@@ -159,7 +159,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Aged Brie", -10, 49);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-11);
       expect(item.quality).toBe(50);
@@ -171,7 +171,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Sulfuras, Hand of Ragnaros", 5, 80);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(5);
       expect(item.quality).toBe(80);
@@ -181,7 +181,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Sulfuras, Hand of Ragnaros", 0, 80);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(0);
       expect(item.quality).toBe(80);
@@ -191,7 +191,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Sulfuras, Hand of Ragnaros", -10, 80);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-10);
       expect(item.quality).toBe(80);
@@ -203,7 +203,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(10);
       expect(item.quality).toBe(11);
@@ -213,7 +213,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 50);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(10);
       expect(item.quality).toBe(50);
@@ -223,7 +223,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(9);
       expect(item.quality).toBe(12);
@@ -233,7 +233,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 50);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(9);
       expect(item.quality).toBe(50);
@@ -243,7 +243,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(9);
       expect(item.quality).toBe(50);
@@ -253,7 +253,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(5);
       expect(item.quality).toBe(12);
@@ -263,7 +263,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 50);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(5);
       expect(item.quality).toBe(50);
@@ -273,7 +273,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 49);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(5);
       expect(item.quality).toBe(50);
@@ -283,7 +283,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(4);
       expect(item.quality).toBe(13);
@@ -293,7 +293,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(4);
       expect(item.quality).toBe(50);
@@ -303,7 +303,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(4);
       expect(item.quality).toBe(50);
@@ -313,7 +313,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(0);
       expect(item.quality).toBe(13);
@@ -323,7 +323,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 1, 50);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(0);
       expect(item.quality).toBe(50);
@@ -333,7 +333,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 1, 48);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(0);
       expect(item.quality).toBe(50);
@@ -343,7 +343,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-1);
       expect(item.quality).toBe(0);
@@ -353,7 +353,7 @@ describe("Gilded Rose", () => {
       const gildedRose = new GildedRose();
       const item = new Item("Backstage passes to a TAFKAL80ETC concert", -10, 10);
 
-      gildedRose.updateQuality(item);
+      gildedRose.processEndOfDay(item);
 
       expect(item.daysRemaining).toBe(-11);
       expect(item.quality).toBe(0);
