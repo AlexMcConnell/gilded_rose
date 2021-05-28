@@ -4,13 +4,13 @@ public class Item {
 
     public String name;
 
-    public int sellIn;
+    public int daysRemaining;
 
     public int quality;
 
-    public Item(String name, int sellIn, int quality) {
+    public Item(String name, int daysRemaining, int quality) {
         this.name = name;
-        this.sellIn = sellIn;
+        this.daysRemaining = daysRemaining;
         this.quality = quality;
     }
 }

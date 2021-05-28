@@ -13,7 +13,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(4, item.sellIn);
+        assertEquals(4, item.daysRemaining);
         assertEquals(9, item.quality);
     }
 
@@ -24,7 +24,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(4, item.sellIn);
+        assertEquals(4, item.daysRemaining);
         assertEquals(0, item.quality);
     }
 
@@ -35,7 +35,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-1, item.sellIn);
+        assertEquals(-1, item.daysRemaining);
         assertEquals(8, item.quality);
     }
 
@@ -46,7 +46,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-1, item.sellIn);
+        assertEquals(-1, item.daysRemaining);
         assertEquals(0, item.quality);
     }
 
@@ -57,7 +57,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-1, item.sellIn);
+        assertEquals(-1, item.daysRemaining);
         assertEquals(0, item.quality);
     }
 
@@ -68,7 +68,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-11, item.sellIn);
+        assertEquals(-11, item.daysRemaining);
         assertEquals(8, item.quality);
     }
 
@@ -79,7 +79,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-11, item.sellIn);
+        assertEquals(-11, item.daysRemaining);
         assertEquals(0, item.quality);
     }
 
@@ -90,7 +90,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-11, item.sellIn);
+        assertEquals(-11, item.daysRemaining);
         assertEquals(0, item.quality);
     }
 
@@ -101,7 +101,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(4, item.sellIn);
+        assertEquals(4, item.daysRemaining);
         assertEquals(11, item.quality);
     }
 
@@ -112,7 +112,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(4, item.sellIn);
+        assertEquals(4, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -123,7 +123,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-1, item.sellIn);
+        assertEquals(-1, item.daysRemaining);
         assertEquals(12, item.quality);
     }
 
@@ -134,7 +134,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-1, item.sellIn);
+        assertEquals(-1, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -145,7 +145,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-1, item.sellIn);
+        assertEquals(-1, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -156,7 +156,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-11, item.sellIn);
+        assertEquals(-11, item.daysRemaining);
         assertEquals(12, item.quality);
     }
 
@@ -167,7 +167,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-11, item.sellIn);
+        assertEquals(-11, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -178,7 +178,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-11, item.sellIn);
+        assertEquals(-11, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -189,7 +189,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(5, item.sellIn);
+        assertEquals(5, item.daysRemaining);
         assertEquals(80, item.quality);
     }
 
@@ -200,7 +200,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(0, item.sellIn);
+        assertEquals(0, item.daysRemaining);
         assertEquals(80, item.quality);
     }
 
@@ -211,7 +211,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-10, item.sellIn);
+        assertEquals(-10, item.daysRemaining);
         assertEquals(80, item.quality);
     }
 
@@ -222,7 +222,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(10, item.sellIn);
+        assertEquals(10, item.daysRemaining);
         assertEquals(11, item.quality);
     }
 
@@ -233,7 +233,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(10, item.sellIn);
+        assertEquals(10, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -244,7 +244,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(9, item.sellIn);
+        assertEquals(9, item.daysRemaining);
         assertEquals(12, item.quality);
     }
 
@@ -255,7 +255,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(9, item.sellIn);
+        assertEquals(9, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -266,7 +266,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(9, item.sellIn);
+        assertEquals(9, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -277,7 +277,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(5, item.sellIn);
+        assertEquals(5, item.daysRemaining);
         assertEquals(12, item.quality);
     }
 
@@ -288,7 +288,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(5, item.sellIn);
+        assertEquals(5, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -299,7 +299,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(5, item.sellIn);
+        assertEquals(5, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -310,7 +310,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(4, item.sellIn);
+        assertEquals(4, item.daysRemaining);
         assertEquals(13, item.quality);
     }
 
@@ -321,7 +321,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(4, item.sellIn);
+        assertEquals(4, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -332,7 +332,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(4, item.sellIn);
+        assertEquals(4, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -343,7 +343,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(0, item.sellIn);
+        assertEquals(0, item.daysRemaining);
         assertEquals(13, item.quality);
     }
 
@@ -354,7 +354,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(0, item.sellIn);
+        assertEquals(0, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -365,7 +365,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(0, item.sellIn);
+        assertEquals(0, item.daysRemaining);
         assertEquals(50, item.quality);
     }
 
@@ -376,7 +376,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-1, item.sellIn);
+        assertEquals(-1, item.daysRemaining);
         assertEquals(0, item.quality);
     }
 
@@ -387,7 +387,7 @@ class GildedRoseTest {
         
         app.processEndOfDay(item);
 
-        assertEquals(-11, item.sellIn);
+        assertEquals(-11, item.daysRemaining);
         assertEquals(0, item.quality);
     }
 }
