@@ -7,7 +7,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].daysRemaining).toBe(4);
       expect(gildedRose.items[0].quality).toBe(9);
     });
 
@@ -16,7 +16,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].daysRemaining).toBe(4);
       expect(gildedRose.items[0].quality).toBe(0);
     });
 
@@ -25,7 +25,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].daysRemaining).toBe(-1);
       expect(gildedRose.items[0].quality).toBe(8);
     });
 
@@ -34,7 +34,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].daysRemaining).toBe(-1);
       expect(gildedRose.items[0].quality).toBe(0);
     });
 
@@ -43,7 +43,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].daysRemaining).toBe(-1);
       expect(gildedRose.items[0].quality).toBe(0);
     });
 
@@ -52,7 +52,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].daysRemaining).toBe(-11);
       expect(gildedRose.items[0].quality).toBe(8);
     });
 
@@ -61,7 +61,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].daysRemaining).toBe(-11);
       expect(gildedRose.items[0].quality).toBe(0);
     });
 
@@ -70,7 +70,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].daysRemaining).toBe(-11);
       expect(gildedRose.items[0].quality).toBe(0);
     });
   });
@@ -81,7 +81,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].daysRemaining).toBe(4);
       expect(gildedRose.items[0].quality).toBe(11);
     });
 
@@ -90,7 +90,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].daysRemaining).toBe(4);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -99,7 +99,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].daysRemaining).toBe(-1);
       expect(gildedRose.items[0].quality).toBe(12);
     });
 
@@ -108,7 +108,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].daysRemaining).toBe(-1);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -117,7 +117,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].daysRemaining).toBe(-1);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -126,7 +126,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].daysRemaining).toBe(-11);
       expect(gildedRose.items[0].quality).toBe(12);
     });
 
@@ -135,7 +135,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].daysRemaining).toBe(-11);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -144,7 +144,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].daysRemaining).toBe(-11);
       expect(gildedRose.items[0].quality).toBe(50);
     });
   });
@@ -155,7 +155,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(5);
+      expect(gildedRose.items[0].daysRemaining).toBe(5);
       expect(gildedRose.items[0].quality).toBe(80);
     });
 
@@ -164,7 +164,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(0);
+      expect(gildedRose.items[0].daysRemaining).toBe(0);
       expect(gildedRose.items[0].quality).toBe(80);
     });
 
@@ -173,7 +173,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-10);
+      expect(gildedRose.items[0].daysRemaining).toBe(-10);
       expect(gildedRose.items[0].quality).toBe(80);
     });
   });
@@ -184,7 +184,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(10);
+      expect(gildedRose.items[0].daysRemaining).toBe(10);
       expect(gildedRose.items[0].quality).toBe(11);
     });
 
@@ -193,7 +193,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(10);
+      expect(gildedRose.items[0].daysRemaining).toBe(10);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -202,7 +202,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(9);
+      expect(gildedRose.items[0].daysRemaining).toBe(9);
       expect(gildedRose.items[0].quality).toBe(12);
     });
 
@@ -211,7 +211,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(9);
+      expect(gildedRose.items[0].daysRemaining).toBe(9);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -220,7 +220,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(9);
+      expect(gildedRose.items[0].daysRemaining).toBe(9);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -229,7 +229,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(5);
+      expect(gildedRose.items[0].daysRemaining).toBe(5);
       expect(gildedRose.items[0].quality).toBe(12);
     });
 
@@ -238,7 +238,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(5);
+      expect(gildedRose.items[0].daysRemaining).toBe(5);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -247,7 +247,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(5);
+      expect(gildedRose.items[0].daysRemaining).toBe(5);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -256,7 +256,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].daysRemaining).toBe(4);
       expect(gildedRose.items[0].quality).toBe(13);
     });
 
@@ -265,7 +265,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].daysRemaining).toBe(4);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -274,7 +274,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(4);
+      expect(gildedRose.items[0].daysRemaining).toBe(4);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -283,7 +283,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(0);
+      expect(gildedRose.items[0].daysRemaining).toBe(0);
       expect(gildedRose.items[0].quality).toBe(13);
     });
 
@@ -292,7 +292,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(0);
+      expect(gildedRose.items[0].daysRemaining).toBe(0);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -301,7 +301,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(0);
+      expect(gildedRose.items[0].daysRemaining).toBe(0);
       expect(gildedRose.items[0].quality).toBe(50);
     });
 
@@ -310,7 +310,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-1);
+      expect(gildedRose.items[0].daysRemaining).toBe(-1);
       expect(gildedRose.items[0].quality).toBe(0);
     });
 
@@ -319,7 +319,7 @@ describe("Gilded Rose", () => {
 
       gildedRose.updateQuality();
 
-      expect(gildedRose.items[0].sellIn).toBe(-11);
+      expect(gildedRose.items[0].daysRemaining).toBe(-11);
       expect(gildedRose.items[0].quality).toBe(0);
     });
   });
