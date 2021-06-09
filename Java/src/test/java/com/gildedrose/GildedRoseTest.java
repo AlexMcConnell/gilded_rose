@@ -390,4 +390,92 @@ class GildedRoseTest {
         assertEquals(-11, item.daysRemaining);
         assertEquals(0, item.quality);
     }
+
+    @Test
+    void conjuredManaCake_BeforeSellDate() {
+        Item item = new Item("Conjured Mana Cake", 5, 10);
+        GildedRose app = new GildedRose();
+
+        app.processEndOfDay(item);
+
+        assertEquals(4, item.daysRemaining);
+        assertEquals(8, item.quality);
+    }
+
+    @Test
+    void conjuredManaCake_WithMinQuality() {
+        Item item = new Item("Conjured Mana Cake", 5, 0);
+        GildedRose app = new GildedRose();
+
+        app.processEndOfDay(item);
+
+        assertEquals(4, item.daysRemaining);
+        assertEquals(0, item.quality);
+    }
+
+    @Test
+    void conjuredManaCake_OnSellDate() {
+        Item item = new Item("Conjured Mana Cake", 0, 10);
+        GildedRose app = new GildedRose();
+
+        app.processEndOfDay(item);
+
+        assertEquals(-1, item.daysRemaining);
+        assertEquals(6, item.quality);
+    }
+
+    @Test
+    void conjuredManaCake_OnSellDateWithMinQuality() {
+        Item item = new Item("Conjured Mana Cake", 0, 0);
+        GildedRose app = new GildedRose();
+
+        app.processEndOfDay(item);
+
+        assertEquals(-1, item.daysRemaining);
+        assertEquals(0, item.quality);
+    }
+
+    @Test
+    void conjuredManaCake_OnSellDateNearMinQuality() {
+        Item item = new Item("Conjured Mana Cake", 0, 1);
+        GildedRose app = new GildedRose();
+
+        app.processEndOfDay(item);
+
+        assertEquals(-1, item.daysRemaining);
+        assertEquals(0, item.quality);
+    }
+
+    @Test
+    void conjuredManaCake_AfterSellDate() {
+        Item item = new Item("Conjured Mana Cake", -10, 10);
+        GildedRose app = new GildedRose();
+
+        app.processEndOfDay(item);
+
+        assertEquals(-11, item.daysRemaining);
+        assertEquals(6, item.quality);
+    }
+
+    @Test
+    void conjuredManaCake_AfterSellDateWithMinQuality() {
+        Item item = new Item("Conjured Mana Cake", -10, 0);
+        GildedRose app = new GildedRose();
+
+        app.processEndOfDay(item);
+
+        assertEquals(-11, item.daysRemaining);
+        assertEquals(0, item.quality);
+    }
+
+    @Test
+    void conjuredManaCake_AfterSellDateNearMinQuality() {
+        Item item = new Item("Conjured Mana Cake", -10, 1);
+        GildedRose app = new GildedRose();
+
+        app.processEndOfDay(item);
+
+        assertEquals(-11, item.daysRemaining);
+        assertEquals(0, item.quality);
+    }
 }
