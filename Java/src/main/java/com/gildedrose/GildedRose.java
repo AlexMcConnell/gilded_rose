@@ -1,6 +1,13 @@
 package com.gildedrose;
 
-class GildedRose {
+import java.util.List;
+
+public class GildedRose {
+    public void processEndOfDay(List<Item> items) {
+        for (Item item : items) {
+            processEndOfDay(item);
+        }
+    }
 
     public void processEndOfDay(Item item) {
         if (!item.name.equals("Aged Brie")
