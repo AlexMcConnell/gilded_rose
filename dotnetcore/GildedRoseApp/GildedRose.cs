@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace ConsoleApplication
 {
     public class GildedRose
@@ -7,6 +8,15 @@ namespace ConsoleApplication
         {
             Console.WriteLine("Dummy Main");
         }
+
+        public void ProcessEndOfDay(IList<Item> items)
+        {
+            foreach(Item item in items)
+            {
+                ProcessEndOfDay(item);
+            }
+        }
+
         public void ProcessEndOfDay(Item item)
         {
             if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
