@@ -1,5 +1,9 @@
 class GildedRose {
-  processEndOfDay(item) {
+  processEndOfDay(items) {
+    items.forEach(item => this.processItemEndOfDay(item));
+  }
+
+  processItemEndOfDay(item) {
     if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
       if (item.quality > 0) {
         if (item.name != 'Sulfuras, Hand of Ragnaros') {
