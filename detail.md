@@ -36,5 +36,5 @@ Pretty simple, right? Well this is where it gets interesting:
 
 ## The tests work and are fully comprehensive. Use them to your advantage!
 
-Also, lease treat this app as if it were a library imported by another app. That means to respect
+Also, please treat this app as if it were a library imported by another app. That means to respect
 the existing contract when it comes to how the tests interface with the primary classes.
