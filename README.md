@@ -7,7 +7,7 @@ of every day. This app represents a portion of our system that receives a list o
 ## We have recently signed a supplier for a new item. Please implement the following:
 
   - "*Conjured Mana Cake*": **quality** degrades by 2 per day before the **days remaining**
-    date has passed and by 4 after. Its **days remaining** decreases by one every day.
+    date has passed and by 4 after. Its **days remaining** decreases by one every day. Its quality can never increase to more than 50.
 
 ## The tests work and are fully comprehensive. Use them to your advantage!
 
