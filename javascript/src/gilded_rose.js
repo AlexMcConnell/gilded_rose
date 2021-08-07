@@ -1,6 +1,8 @@
 class GildedRose {
   processEndOfDay(items) {
-    items.forEach(item => this.processItemEndOfDay(item));
+    for (let i = 0; i < items.length; i++) {
+      this.processItemEndOfDay(items[i])
+    }
   }
 
   processItemEndOfDay(item) {
