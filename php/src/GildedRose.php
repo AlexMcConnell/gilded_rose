@@ -4,7 +4,14 @@ namespace GildedRose;
 
 class GildedRose
 {
-    public function processEndOfDay(Item $item): void
+    public function processEndOfDay(array $items): void
+    {
+        for ($i = 0; $i < count($items); $i += 1) {
+            $this->processItemEndOfDay($items[$i]);
+        }
+    }
+
+    public function processItemEndOfDay(Item $item): void
     {
         if ($item->name != 'Aged Brie' and $item->name != 'Backstage passes to a TAFKAL80ETC concert') {
             if ($item->quality > 0) {
