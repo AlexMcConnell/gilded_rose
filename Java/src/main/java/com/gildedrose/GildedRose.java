@@ -3,9 +3,9 @@ package com.gildedrose;
 import java.util.List;
 
 public class GildedRose {
-    public void processEndOfDay(List<Item> items) {
-        for (Item item : items) {
-            processEndOfDay(item);
+    public void processEndOfDay(Item[] items) {
+        for (int i = 0; i < items.length; i++) {
+            processEndOfDay(items[0]);
         }
     }
 
