@@ -11,9 +11,8 @@ namespace ConsoleApplication
 
         public void ProcessEndOfDay(IList<Item> items)
         {
-            foreach(Item item in items)
-            {
-                ProcessEndOfDay(item);
+            for (int i = 0; i < items.Count; i++) {
+                ProcessEndOfDay(items[i]);
             }
         }
 
