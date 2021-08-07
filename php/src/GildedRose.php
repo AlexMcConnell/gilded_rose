@@ -1,10 +1,8 @@
 <?php
 
-declare(strict_types=1);
-
 namespace GildedRose;
 
-final class GildedRose
+class GildedRose
 {
     public function processEndOfDay(Item $item): void
     {
