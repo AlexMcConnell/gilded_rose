@@ -6,7 +6,8 @@ namespace ConsoleApplication
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Dummy Main");
+            // This method is not used in this exercise.
+            // Please ignore it. 
         }
 
         public void ProcessEndOfDay(IList<Item> items)
