@@ -5,7 +5,7 @@ import java.util.List;
 public class GildedRose {
     public void processEndOfDay(Item[] items) {
         for (int i = 0; i < items.length; i++) {
-            processEndOfDay(items[0]);
+            processEndOfDay(items[i]);
         }
     }
 
