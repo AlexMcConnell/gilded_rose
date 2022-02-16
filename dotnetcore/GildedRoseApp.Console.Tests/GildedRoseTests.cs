@@ -8,6 +8,86 @@ namespace GildedRoseApp.Console.Tests
     public class GildedRoseTests
     {
         [Fact]
+        public void ConjuredManaCake_BeforeSellDate()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", DaysRemaining = 5, Quality = 10 } };
+            new GildedRose().ProcessEndOfDay(Items);
+
+            Assert.Equal(4, Items[0].DaysRemaining);
+            Assert.Equal(8, Items[0].Quality);
+        }
+
+        [Fact]
+        public void ConjuredManaCake_WithMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", DaysRemaining = 5, Quality = 0 } };
+            new GildedRose().ProcessEndOfDay(Items);
+
+            Assert.Equal(4, Items[0].DaysRemaining);
+            Assert.Equal(0, Items[0].Quality);
+        }
+
+        [Fact]
+        public void ConjuredManaCake_OnSellDate()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", DaysRemaining = 0, Quality = 10 } };
+            new GildedRose().ProcessEndOfDay(Items);
+
+            Assert.Equal(-1, Items[0].DaysRemaining);
+            Assert.Equal(6, Items[0].Quality);
+        }
+
+        [Fact]
+        public void ConjuredManaCake_OnSellDateWithMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", DaysRemaining = 0, Quality = 0 } };
+            new GildedRose().ProcessEndOfDay(Items);
+
+            Assert.Equal(-1, Items[0].DaysRemaining);
+            Assert.Equal(0, Items[0].Quality);
+        }
+
+        [Fact]
+        public void ConjuredManaCake_OnSellDateNearMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", DaysRemaining = 0, Quality = 1 } };
+            new GildedRose().ProcessEndOfDay(Items);
+
+            Assert.Equal(-1, Items[0].DaysRemaining);
+            Assert.Equal(0, Items[0].Quality);
+        }
+
+        [Fact]
+        public void ConjuredManaCake_AfterSellDate()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", DaysRemaining = -10, Quality = 10 } };
+            new GildedRose().ProcessEndOfDay(Items);
+
+            Assert.Equal(-11, Items[0].DaysRemaining);
+            Assert.Equal(6, Items[0].Quality);
+        }
+
+        [Fact]
+        public void ConjuredManaCake_AfterSellDateWithMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", DaysRemaining = -10, Quality = 0 } };
+            new GildedRose().ProcessEndOfDay(Items);
+
+            Assert.Equal(-11, Items[0].DaysRemaining);
+            Assert.Equal(0, Items[0].Quality);
+        }
+
+        [Fact]
+        public void ConjuredManaCake_AfterSellDateNearMinQuality()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", DaysRemaining = -10, Quality = 1 } };
+            new GildedRose().ProcessEndOfDay(Items);
+
+            Assert.Equal(-11, Items[0].DaysRemaining);
+            Assert.Equal(0, Items[0].Quality);
+        }
+
+        [Fact]
         public void normalItem_BeforeSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = 5, Quality = 10 } };
