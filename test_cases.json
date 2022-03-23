@@ -1,0 +1,271 @@
+[
+    {
+        "context": "Normal Item",
+        "itemName": "All other strings",
+        "testCases": [
+            {
+                "testName": "before sell date",
+                "startingDaysRemaining": 5,
+                "startingQuality": 10,
+                "expectedDaysRemaining": 4,
+                "expectedQuality": 9
+            },
+            {
+                "testName": "with min quality",
+                "startingDaysRemaining": 5,
+                "startingQuality": 0,
+                "expectedDaysRemaining": 4,
+                "expectedQuality": 0
+            },
+            {
+                "testName": "on sell date",
+                "startingDaysRemaining": 0,
+                "startingQuality": 10,
+                "expectedDaysRemaining": -1,
+                "expectedQuality": 8
+            },
+            {
+                "testName": "on sell date with min quality",
+                "startingDaysRemaining": 0,
+                "startingQuality": 0,
+                "expectedDaysRemaining": -1,
+                "expectedQuality": 0
+            },
+            {
+                "testName": "on sell date near min quality",
+                "startingDaysRemaining": 0,
+                "startingQuality": 1,
+                "expectedDaysRemaining": -1,
+                "expectedQuality": 0
+            },
+            {
+                "testName": "after sell date",
+                "startingDaysRemaining": -10,
+                "startingQuality": 10,
+                "expectedDaysRemaining": -11,
+                "expectedQuality": 8
+            },
+            {
+                "testName": "after sell date with min quality",
+                "startingDaysRemaining": -10,
+                "startingQuality": 0,
+                "expectedDaysRemaining": -11,
+                "expectedQuality": 0
+            },
+            {
+                "testName": "after sell date near min quality",
+                "startingDaysRemaining": 0,
+                "startingQuality": 1,
+                "expectedDaysRemaining": -1,
+                "expectedQuality": 0
+            }
+        ]
+    },
+    {
+        "context": "Aged Brie",
+        "itemName": "Aged Brie",
+        "testCases": [
+            {
+                "testName": "before sell date",
+                "startingDaysRemaining": 5,
+                "startingQuality": 10,
+                "expectedDaysRemaining": 4,
+                "expectedQuality": 11
+            },
+            {
+                "testName": "with max quality",
+                "startingDaysRemaining": 5,
+                "startingQuality": 50,
+                "expectedDaysRemaining": 4,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "on sell date",
+                "startingDaysRemaining": 0,
+                "startingQuality": 10,
+                "expectedDaysRemaining": -1,
+                "expectedQuality": 12
+            },
+            {
+                "testName": "on sell date with max quality",
+                "startingDaysRemaining": 0,
+                "startingQuality": 50,
+                "expectedDaysRemaining": -1,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "on sell date near max quality",
+                "startingDaysRemaining": 0,
+                "startingQuality": 49,
+                "expectedDaysRemaining": -1,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "after sell date",
+                "startingDaysRemaining": -10,
+                "startingQuality": 10,
+                "expectedDaysRemaining": -11,
+                "expectedQuality": 12
+            },
+            {
+                "testName": "after sell date with max quality",
+                "startingDaysRemaining": -10,
+                "startingQuality": 50,
+                "expectedDaysRemaining": -11,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "after sell date near max quality",
+                "startingDaysRemaining": -10,
+                "startingQuality": 49,
+                "expectedDaysRemaining": -11,
+                "expectedQuality": 50
+            }
+        ]
+    },
+    {
+        "context": "Sulfuras",
+        "itemName": "Sulfuras, Hand of Ragnaros",
+        "testCases": [
+            {
+                "testName": "before sell date",
+                "startingDaysRemaining": 10,
+                "startingQuality": 80,
+                "expectedDaysRemaining": 10,
+                "expectedQuality": 80
+            },
+            {
+                "testName": "on sell date",
+                "startingDaysRemaining": 0,
+                "startingQuality": 80,
+                "expectedDaysRemaining": 0,
+                "expectedQuality": 80
+            },
+            {
+                "testName": "after sell date",
+                "startingDaysRemaining": -10,
+                "startingQuality": 80,
+                "expectedDaysRemaining": -10,
+                "expectedQuality": 80
+            }
+        ]
+    },
+    {
+        "context": "Backstage Passes",
+        "itemName": "Backstage passes to a TAFKAL80ETC concert",
+        "testCases": [
+            {
+                "testName": "long before sell date",
+                "startingDaysRemaining": 11,
+                "startingQuality": 10,
+                "expectedDaysRemaining": 10,
+                "expectedQuality": 11
+            },
+            {
+                "testName": "long before sell date at max quality",
+                "startingDaysRemaining": 11,
+                "startingQuality": 50,
+                "expectedDaysRemaining": 10,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "medium close to sell date upper bound",
+                "startingDaysRemaining": 10,
+                "startingQuality": 10,
+                "expectedDaysRemaining": 9,
+                "expectedQuality": 12
+            },
+            {
+                "testName": "medium close to sell date upper bound at max qualityd",
+                "startingDaysRemaining": 10,
+                "startingQuality": 50,
+                "expectedDaysRemaining": 9,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "medium close to sell date upper bound near max quality",
+                "startingDaysRemaining": 10,
+                "startingQuality": 49,
+                "expectedDaysRemaining": 9,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "medium close to sell date lower bound",
+                "startingDaysRemaining": 6,
+                "startingQuality": 10,
+                "expectedDaysRemaining": 5,
+                "expectedQuality": 12
+            },
+            {
+                "testName": "medium close to sell date lower bound at max qualityd",
+                "startingDaysRemaining": 6,
+                "startingQuality": 50,
+                "expectedDaysRemaining": 5,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "medium close to sell date lower bound near max quality",
+                "startingDaysRemaining": 6,
+                "startingQuality": 49,
+                "expectedDaysRemaining": 5,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "very close to sell date upper bound",
+                "startingDaysRemaining": 5,
+                "startingQuality": 10,
+                "expectedDaysRemaining": 4,
+                "expectedQuality": 13
+            },
+            {
+                "testName": "very close to sell date upper bound at max qualityd",
+                "startingDaysRemaining": 5,
+                "startingQuality": 50,
+                "expectedDaysRemaining": 4,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "very close to sell date upper bound near max quality",
+                "startingDaysRemaining": 5,
+                "startingQuality": 48,
+                "expectedDaysRemaining": 4,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "very close to sell date lower bound",
+                "startingDaysRemaining": 1,
+                "startingQuality": 10,
+                "expectedDaysRemaining": 0,
+                "expectedQuality": 13
+            },
+            {
+                "testName": "very close to sell date lower bound at max qualityd",
+                "startingDaysRemaining": 1,
+                "startingQuality": 50,
+                "expectedDaysRemaining": 0,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "very close to sell date lower bound near max quality",
+                "startingDaysRemaining": 1,
+                "startingQuality": 48,
+                "expectedDaysRemaining": 0,
+                "expectedQuality": 50
+            },
+            {
+                "testName": "on sell date",
+                "startingDaysRemaining": 0,
+                "startingQuality": 10,
+                "expectedDaysRemaining": -1,
+                "expectedQuality": 0
+            },
+            {
+                "testName": "after sell date",
+                "startingDaysRemaining": -10,
+                "startingQuality": 10,
+                "expectedDaysRemaining": -11,
+                "expectedQuality": 0
+            }
+        ]
+    }
+]
