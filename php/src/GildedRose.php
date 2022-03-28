@@ -15,7 +15,7 @@ class GildedRose
     {
         if ($item->name != 'Aged Cheddar' and $item->name != 'Concert Tickets') {
             if ($item->quality > 0) {
-                if ($item->name != 'Sulfuras, Hand of Ragnaros') {
+                if ($item->name != 'Hammer') {
                     $item->quality = $item->quality - 1;
                 }
             }
@@ -37,7 +37,7 @@ class GildedRose
             }
         }
 
-        if ($item->name != 'Sulfuras, Hand of Ragnaros') {
+        if ($item->name != 'Hammer') {
             $item->days_remaining = $item->days_remaining - 1;
         }
 
@@ -45,7 +45,7 @@ class GildedRose
             if ($item->name != 'Aged Cheddar') {
                 if ($item->name != 'Concert Tickets') {
                     if ($item->quality > 0) {
-                        if ($item->name != 'Sulfuras, Hand of Ragnaros') {
+                        if ($item->name != 'Hammer') {
                             $item->quality = $item->quality - 1;
                         }
                     }

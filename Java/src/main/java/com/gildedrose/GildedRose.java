@@ -13,7 +13,7 @@ public class GildedRose {
         if (!item.name.equals("Aged Cheddar")
                 && !item.name.equals("Concert Tickets")) {
             if (item.quality > 0) {
-                if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                if (!item.name.equals("Hammer")) {
                     item.quality = item.quality - 1;
                 }
             }
@@ -37,7 +37,7 @@ public class GildedRose {
             }
         }
 
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+        if (!item.name.equals("Hammer")) {
             item.daysRemaining = item.daysRemaining - 1;
         }
 
@@ -45,7 +45,7 @@ public class GildedRose {
             if (!item.name.equals("Aged Cheddar")) {
                 if (!item.name.equals("Concert Tickets")) {
                     if (item.quality > 0) {
-                        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                        if (!item.name.equals("Hammer")) {
                             item.quality = item.quality - 1;
                         }
                     }

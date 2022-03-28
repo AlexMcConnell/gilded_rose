@@ -166,10 +166,10 @@ describe("Gilded Rose", () => {
     });
   });
 
-  describe("Sulfuras, Hand of Ragnaros", () => {
+  describe("Hammer", () => {
     it("before sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Sulfuras, Hand of Ragnaros", 5, 80)];
+      const items = [new Item("Hammer", 5, 80)];
 
       gildedRose.processEndOfDay(items);
 
@@ -179,7 +179,7 @@ describe("Gilded Rose", () => {
 
     it("on sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Sulfuras, Hand of Ragnaros", 0, 80)];
+      const items = [new Item("Hammer", 0, 80)];
 
       gildedRose.processEndOfDay(items);
 
@@ -189,7 +189,7 @@ describe("Gilded Rose", () => {
 
     it("after sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Sulfuras, Hand of Ragnaros", -10, 80)];
+      const items = [new Item("Hammer", -10, 80)];
 
       gildedRose.processEndOfDay(items);
 

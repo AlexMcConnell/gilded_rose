@@ -170,7 +170,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void sulfuras_BeforeSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", DaysRemaining = 5, Quality = 80 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 5, Quality = 80 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(5, Items[0].DaysRemaining);
@@ -180,7 +180,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void sulfuras_OnSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", DaysRemaining = 0, Quality = 80 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 0, Quality = 80 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(0, Items[0].DaysRemaining);
@@ -190,7 +190,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void sulfuras_AfterSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", DaysRemaining = -10, Quality = 80 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = -10, Quality = 80 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-10, Items[0].DaysRemaining);

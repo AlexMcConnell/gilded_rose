@@ -186,7 +186,7 @@ class GildedRoseTest extends TestCase
 
     public function testSulfuras_BeforeSellDate(): void
     {
-        $items = [new Item('Sulfuras, Hand of Ragnaros', 5, 80)];
+        $items = [new Item('Hammer', 5, 80)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -197,7 +197,7 @@ class GildedRoseTest extends TestCase
 
     public function testSulfuras_OnSellDate(): void
     {
-        $items = [new Item('Sulfuras, Hand of Ragnaros', 0, 80)];
+        $items = [new Item('Hammer', 0, 80)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -208,7 +208,7 @@ class GildedRoseTest extends TestCase
 
     public function testSulfuras_AfterSellDate(): void
     {
-        $items = [new Item('Sulfuras, Hand of Ragnaros', -10, 80)];
+        $items = [new Item('Hammer', -10, 80)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);

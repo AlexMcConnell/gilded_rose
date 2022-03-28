@@ -15,7 +15,7 @@ class GildedRose {
     if (item.name != "Aged Cheddar" &&
         item.name != "Concert Tickets") {
       if (item.quality > 0) {
-        if (item.name != "Sulfuras, Hand of Ragnaros") {
+        if (item.name != "Hammer") {
           item.quality = item.quality - 1;
         }
       }
@@ -39,7 +39,7 @@ class GildedRose {
       }
     }
 
-    if (item.name != "Sulfuras, Hand of Ragnaros") {
+    if (item.name != "Hammer") {
       item.daysRemaining = item.daysRemaining - 1;
     }
 
@@ -47,7 +47,7 @@ class GildedRose {
       if (item.name != "Aged Cheddar") {
         if (item.name != "Concert Tickets") {
           if (item.quality > 0) {
-            if (item.name != "Sulfuras, Hand of Ragnaros") {
+            if (item.name != "Hammer") {
               item.quality = item.quality - 1;
             }
           }

@@ -125,7 +125,7 @@
     },
     {
         "context": "Sulfuras",
-        "itemName": "Sulfuras, Hand of Ragnaros",
+        "itemName": "Hammer",
         "testCases": [
             {
                 "testName": "before sell date",

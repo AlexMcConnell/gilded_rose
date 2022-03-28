@@ -186,7 +186,7 @@ class GildedRoseTest {
 
     @Test
     void sulfuras_BeforeSellDate() {
-        Item[] items = {new Item("Sulfuras, Hand of Ragnaros", 5, 80)};
+        Item[] items = {new Item("Hammer", 5, 80)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -197,7 +197,7 @@ class GildedRoseTest {
 
     @Test
     void sulfuras_OnSellDate() {
-        Item[] items = {new Item("Sulfuras, Hand of Ragnaros", 0, 80)};
+        Item[] items = {new Item("Hammer", 0, 80)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -208,7 +208,7 @@ class GildedRoseTest {
 
     @Test
     void sulfuras_AfterSellDate() {
-        Item[] items = {new Item("Sulfuras, Hand of Ragnaros", -10, 80)};
+        Item[] items = {new Item("Hammer", -10, 80)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
