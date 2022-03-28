@@ -1,6 +1,11 @@
 Hi and welcome to team Gilded Rose. We provide a library that provides calculations for how items should change each day.
 We have no control over the app that consumes this library and cannot change how it interfaces with our library.
 
+Items have the following fields:
+**name** - The name of the item.
+**days remaining** - The number of days remaining until the item "expires".
+**quality** - The quality of the item.
+
 ## We have recently signed a supplier for a new item. Please implement the following:
 
   - "*Raw Milk*": **quality** degrades by 2 per day before the **days remaining**
