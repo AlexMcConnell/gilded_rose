@@ -19,7 +19,7 @@ namespace ConsoleApplication
 
         public void ProcessEndOfDay(Item item)
         {
-            if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
+            if (item.Name != "Aged Brie" && item.Name != "Concert Tickets")
             {
                 if (item.Quality > 0)
                 {
@@ -34,7 +34,7 @@ namespace ConsoleApplication
                 if (item.Quality < 50)
                 {
                     item.Quality = item.Quality + 1;
-                    if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                    if (item.Name == "Concert Tickets")
                     {
                         if (item.DaysRemaining < 11)
                         {
@@ -61,7 +61,7 @@ namespace ConsoleApplication
             {
                 if (item.Name != "Aged Brie")
                 {
-                    if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
+                    if (item.Name != "Concert Tickets")
                     {
                         if (item.Quality > 0)
                         {

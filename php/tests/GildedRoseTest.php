@@ -219,7 +219,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_LongBeforeSellDate(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 11, 10)];
+        $items = [new Item('Concert Tickets', 11, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -230,7 +230,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_LongBeforeSellDateAtMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 11, 50)];
+        $items = [new Item('Concert Tickets', 11, 50)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -241,7 +241,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_MediumCloseToSellDateUpperBound(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 10, 10)];
+        $items = [new Item('Concert Tickets', 10, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -252,7 +252,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_MediumCloseToSellDateUpperBoundAtMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 10, 50)];
+        $items = [new Item('Concert Tickets', 10, 50)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -263,7 +263,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_MediumCloseToSellDateUpperBoundNearMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 10, 49)];
+        $items = [new Item('Concert Tickets', 10, 49)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -274,7 +274,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_MediumCloseToSellDateLowerBound(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 6, 10)];
+        $items = [new Item('Concert Tickets', 6, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -285,7 +285,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_MediumCloseToSellDateLowerBoundAtMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 6, 50)];
+        $items = [new Item('Concert Tickets', 6, 50)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -296,7 +296,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_MediumCloseToSellDateLowerBoundNearMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 6, 49)];
+        $items = [new Item('Concert Tickets', 6, 49)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -307,7 +307,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_VeryCloseToSellDateUpperBound(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 5, 10)];
+        $items = [new Item('Concert Tickets', 5, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -318,7 +318,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_VeryCloseToSellDateUpperBoundAtMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 5, 50)];
+        $items = [new Item('Concert Tickets', 5, 50)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -329,7 +329,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_VeryCloseToSellDateUpperBoundNearMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 5, 48)];
+        $items = [new Item('Concert Tickets', 5, 48)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -340,7 +340,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_VeryCloseToSellDateLowerBound(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 1, 10)];
+        $items = [new Item('Concert Tickets', 1, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -351,7 +351,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_VeryCloseToSellDateLowerBoundAtMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 1, 50)];
+        $items = [new Item('Concert Tickets', 1, 50)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -362,7 +362,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_VeryCloseToSellDateLowerBoundNearMaxQuality(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 1, 48)];
+        $items = [new Item('Concert Tickets', 1, 48)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -373,7 +373,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_OnSellDate(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 0, 10)];
+        $items = [new Item('Concert Tickets', 0, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -384,7 +384,7 @@ class GildedRoseTest extends TestCase
 
     public function testBackstagePass_AfterSellDate(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', -10, 10)];
+        $items = [new Item('Concert Tickets', -10, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);

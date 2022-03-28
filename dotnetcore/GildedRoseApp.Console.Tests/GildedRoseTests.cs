@@ -200,7 +200,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_LongBeforeSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 11, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 11, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(10, Items[0].DaysRemaining);
@@ -210,7 +210,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_LongBeforeSellDateAtMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 11, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 11, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(10, Items[0].DaysRemaining);
@@ -220,7 +220,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_MediumCloseToSellDateUpperBound()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 10, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(9, Items[0].DaysRemaining);
@@ -230,7 +230,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_MediumCloseToSellDateUpperBoundAtMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 10, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(9, Items[0].DaysRemaining);
@@ -240,7 +240,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_MediumCloseToSellDateUpperBoundNearMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 10, Quality = 49 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 49 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(9, Items[0].DaysRemaining);
@@ -250,7 +250,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_MediumCloseToSellDateLowerBound()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 6, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(5, Items[0].DaysRemaining);
@@ -260,7 +260,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_MediumCloseToSellDateLowerBoundAtMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 6, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(5, Items[0].DaysRemaining);
@@ -270,7 +270,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_MediumCloseToSellDateLowerBoundNearMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 6, Quality = 49 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 49 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(5, Items[0].DaysRemaining);
@@ -280,7 +280,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_VeryCloseToSellDateUpperBound()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 5, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(4, Items[0].DaysRemaining);
@@ -290,7 +290,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_VeryCloseToSellDateUpperBoundAtMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 5, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(4, Items[0].DaysRemaining);
@@ -300,7 +300,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_VeryCloseToSellDateUpperBoundNearMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 5, Quality = 48 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 48 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(4, Items[0].DaysRemaining);
@@ -310,7 +310,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_VeryCloseToSellDateLowerBound()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 1, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(0, Items[0].DaysRemaining);
@@ -320,7 +320,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_VeryCloseToSellDateLowerBoundAtMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 1, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(0, Items[0].DaysRemaining);
@@ -330,7 +330,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_VeryCloseToSellDateLowerBoundNearMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 1, Quality = 48 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 48 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(0, Items[0].DaysRemaining);
@@ -340,7 +340,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_OnSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = 0, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 0, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-1, Items[0].DaysRemaining);
@@ -350,7 +350,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void backstagePass_AfterSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", DaysRemaining = -10, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = -10, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-11, Items[0].DaysRemaining);

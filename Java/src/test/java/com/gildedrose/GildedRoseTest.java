@@ -219,7 +219,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_LongBeforeSellDate() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 11, 10)};
+        Item[] items = {new Item("Concert Tickets", 11, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -230,7 +230,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_LongBeforeSellDateAtMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 11, 50)};
+        Item[] items = {new Item("Concert Tickets", 11, 50)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -241,7 +241,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_MediumCloseToSellDateUpperBound() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 10)};
+        Item[] items = {new Item("Concert Tickets", 10, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -252,7 +252,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_MediumCloseToSellDateUpperBoundAtMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 50)};
+        Item[] items = {new Item("Concert Tickets", 10, 50)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -263,7 +263,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_MediumCloseToSellDateUpperBoundNearMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)};
+        Item[] items = {new Item("Concert Tickets", 10, 49)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -274,7 +274,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_MediumCloseToSellDateLowerBound() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10)};
+        Item[] items = {new Item("Concert Tickets", 6, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -285,7 +285,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_MediumCloseToSellDateLowerBoundAtMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 6, 50)};
+        Item[] items = {new Item("Concert Tickets", 6, 50)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -296,7 +296,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_MediumCloseToSellDateLowerBoundNearMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 6, 49)};
+        Item[] items = {new Item("Concert Tickets", 6, 49)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -307,7 +307,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_VeryCloseToSellDateUpperBound() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10)};
+        Item[] items = {new Item("Concert Tickets", 5, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -318,7 +318,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_VeryCloseToSellDateUpperBoundAtMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50)};
+        Item[] items = {new Item("Concert Tickets", 5, 50)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -329,7 +329,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_VeryCloseToSellDateUpperBoundNearMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)};
+        Item[] items = {new Item("Concert Tickets", 5, 48)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -340,7 +340,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_VeryCloseToSellDateLowerBound() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10)};
+        Item[] items = {new Item("Concert Tickets", 1, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -351,7 +351,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_VeryCloseToSellDateLowerBoundAtMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 1, 50)};
+        Item[] items = {new Item("Concert Tickets", 1, 50)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -362,7 +362,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_VeryCloseToSellDateLowerBoundNearMaxQuality() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 1, 48)};
+        Item[] items = {new Item("Concert Tickets", 1, 48)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -373,7 +373,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_OnSellDate() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10)};
+        Item[] items = {new Item("Concert Tickets", 0, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -384,7 +384,7 @@ class GildedRoseTest {
 
     @Test
     void backstagePass_AfterSellDate() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", -10, 10)};
+        Item[] items = {new Item("Concert Tickets", -10, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);

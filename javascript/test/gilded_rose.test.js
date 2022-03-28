@@ -198,10 +198,10 @@ describe("Gilded Rose", () => {
     });
   });
 
-  describe("Backstage passes to a TAFKAL80ETC concert", () => {
+  describe("Concert Tickets", () => {
     it("long before sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 11, 10)];
+      const items = [new Item("Concert Tickets", 11, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -211,7 +211,7 @@ describe("Gilded Rose", () => {
 
     it("long before sell date at max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 11, 50)];
+      const items = [new Item("Concert Tickets", 11, 50)];
 
       gildedRose.processEndOfDay(items);
 
@@ -221,7 +221,7 @@ describe("Gilded Rose", () => {
 
     it("medium close to sell date upper bound", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 10, 10)];
+      const items = [new Item("Concert Tickets", 10, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -231,7 +231,7 @@ describe("Gilded Rose", () => {
 
     it("medium close to sell date upper bound at max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 10, 50)];
+      const items = [new Item("Concert Tickets", 10, 50)];
 
       gildedRose.processEndOfDay(items);
 
@@ -241,7 +241,7 @@ describe("Gilded Rose", () => {
 
     it("medium close to sell date upper bound near max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)];
+      const items = [new Item("Concert Tickets", 10, 49)];
 
       gildedRose.processEndOfDay(items);
 
@@ -251,7 +251,7 @@ describe("Gilded Rose", () => {
 
     it("medium close to sell date lower bound", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10)];
+      const items = [new Item("Concert Tickets", 6, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -261,7 +261,7 @@ describe("Gilded Rose", () => {
 
     it("medium close to sell date lower bound at max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 6, 50)];
+      const items = [new Item("Concert Tickets", 6, 50)];
 
       gildedRose.processEndOfDay(items);
 
@@ -271,7 +271,7 @@ describe("Gilded Rose", () => {
 
     it("medium close to sell date lower bound near max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 6, 49)];
+      const items = [new Item("Concert Tickets", 6, 49)];
 
       gildedRose.processEndOfDay(items);
 
@@ -281,7 +281,7 @@ describe("Gilded Rose", () => {
 
     it("very close to sell date upper bound", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10)];
+      const items = [new Item("Concert Tickets", 5, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -291,7 +291,7 @@ describe("Gilded Rose", () => {
 
     it("very close to sell date upper bound at max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50)];
+      const items = [new Item("Concert Tickets", 5, 50)];
 
       gildedRose.processEndOfDay(items);
 
@@ -301,7 +301,7 @@ describe("Gilded Rose", () => {
 
     it("very close to sell date upper bound near max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)];
+      const items = [new Item("Concert Tickets", 5, 48)];
 
       gildedRose.processEndOfDay(items);
 
@@ -311,7 +311,7 @@ describe("Gilded Rose", () => {
 
     it("very close to sell date lower bound", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10)];
+      const items = [new Item("Concert Tickets", 1, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -321,7 +321,7 @@ describe("Gilded Rose", () => {
 
     it("very close to sell date lower bound at max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 1, 50)];
+      const items = [new Item("Concert Tickets", 1, 50)];
 
       gildedRose.processEndOfDay(items);
 
@@ -331,7 +331,7 @@ describe("Gilded Rose", () => {
 
     it("very close to sell date lower bound near max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 1, 48)];
+      const items = [new Item("Concert Tickets", 1, 48)];
 
       gildedRose.processEndOfDay(items);
 
@@ -341,7 +341,7 @@ describe("Gilded Rose", () => {
 
     it("on sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10)];
+      const items = [new Item("Concert Tickets", 0, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -351,7 +351,7 @@ describe("Gilded Rose", () => {
 
     it("after sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Backstage passes to a TAFKAL80ETC concert", -10, 10)];
+      const items = [new Item("Concert Tickets", -10, 10)];
 
       gildedRose.processEndOfDay(items);
 

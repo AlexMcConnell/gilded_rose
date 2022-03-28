@@ -11,7 +11,7 @@ public class GildedRose {
 
     public void processEndOfDay(Item item) {
         if (!item.name.equals("Aged Brie")
-                && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                && !item.name.equals("Concert Tickets")) {
             if (item.quality > 0) {
                 if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
                     item.quality = item.quality - 1;
@@ -21,7 +21,7 @@ public class GildedRose {
             if (item.quality < 50) {
                 item.quality = item.quality + 1;
 
-                if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (item.name.equals("Concert Tickets")) {
                     if (item.daysRemaining < 11) {
                         if (item.quality < 50) {
                             item.quality = item.quality + 1;
@@ -43,7 +43,7 @@ public class GildedRose {
 
         if (item.daysRemaining < 0) {
             if (!item.name.equals("Aged Brie")) {
-                if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                if (!item.name.equals("Concert Tickets")) {
                     if (item.quality > 0) {
                         if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
                             item.quality = item.quality - 1;
