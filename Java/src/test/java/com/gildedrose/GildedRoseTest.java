@@ -98,7 +98,7 @@ class GildedRoseTest {
 
     @Test
     void agedBrie_BeforeSellDate() {
-        Item[] items = {new Item("Aged Brie", 5, 10)};
+        Item[] items = {new Item("Aged Cheddar", 5, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -109,7 +109,7 @@ class GildedRoseTest {
 
     @Test
     void agedBrie_WithMaxQuality() {
-        Item[] items = {new Item("Aged Brie", 5, 50)};
+        Item[] items = {new Item("Aged Cheddar", 5, 50)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -120,7 +120,7 @@ class GildedRoseTest {
 
     @Test
     void agedBrie_OnSellDate() {
-        Item[] items = {new Item("Aged Brie", 0, 10)};
+        Item[] items = {new Item("Aged Cheddar", 0, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -131,7 +131,7 @@ class GildedRoseTest {
 
     @Test
     void agedBrie_OnSellDateWithMaxQuality() {
-        Item[] items = {new Item("Aged Brie", 0, 50)};
+        Item[] items = {new Item("Aged Cheddar", 0, 50)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -142,7 +142,7 @@ class GildedRoseTest {
 
     @Test
     void agedBrie_OnSellDateNearMaxQuality() {
-        Item[] items = {new Item("Aged Brie", 0, 49)};
+        Item[] items = {new Item("Aged Cheddar", 0, 49)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -153,7 +153,7 @@ class GildedRoseTest {
 
     @Test
     void agedBrie_AfterSellDate() {
-        Item[] items = {new Item("Aged Brie", -10, 10)};
+        Item[] items = {new Item("Aged Cheddar", -10, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -164,7 +164,7 @@ class GildedRoseTest {
 
     @Test
     void agedBrie_AfterSellDateWithMaxQuality() {
-        Item[] items = {new Item("Aged Brie", -10, 50)};
+        Item[] items = {new Item("Aged Cheddar", -10, 50)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -175,7 +175,7 @@ class GildedRoseTest {
 
     @Test
     void agedBrie_AfterSellDateNearMaxQuality() {
-        Item[] items = {new Item("Aged Brie", -10, 49)};
+        Item[] items = {new Item("Aged Cheddar", -10, 49)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);

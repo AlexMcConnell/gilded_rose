@@ -12,7 +12,7 @@ class GildedRose {
   }
 
   void processItemEndOfDay(Item item) {
-    if (item.name != "Aged Brie" &&
+    if (item.name != "Aged Cheddar" &&
         item.name != "Concert Tickets") {
       if (item.quality > 0) {
         if (item.name != "Sulfuras, Hand of Ragnaros") {
@@ -44,7 +44,7 @@ class GildedRose {
     }
 
     if (item.daysRemaining < 0) {
-      if (item.name != "Aged Brie") {
+      if (item.name != "Aged Cheddar") {
         if (item.name != "Concert Tickets") {
           if (item.quality > 0) {
             if (item.name != "Sulfuras, Hand of Ragnaros") {

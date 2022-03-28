@@ -13,7 +13,7 @@ class GildedRose
 
     public function processItemEndOfDay(Item $item): void
     {
-        if ($item->name != 'Aged Brie' and $item->name != 'Concert Tickets') {
+        if ($item->name != 'Aged Cheddar' and $item->name != 'Concert Tickets') {
             if ($item->quality > 0) {
                 if ($item->name != 'Sulfuras, Hand of Ragnaros') {
                     $item->quality = $item->quality - 1;
@@ -42,7 +42,7 @@ class GildedRose
         }
 
         if ($item->days_remaining < 0) {
-            if ($item->name != 'Aged Brie') {
+            if ($item->name != 'Aged Cheddar') {
                 if ($item->name != 'Concert Tickets') {
                     if ($item->quality > 0) {
                         if ($item->name != 'Sulfuras, Hand of Ragnaros') {

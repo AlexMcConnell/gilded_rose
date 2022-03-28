@@ -6,7 +6,7 @@ class GildedRose {
   }
 
   processItemEndOfDay(item) {
-    if (item.name != 'Aged Brie' && item.name != 'Concert Tickets') {
+    if (item.name != 'Aged Cheddar' && item.name != 'Concert Tickets') {
       if (item.quality > 0) {
         if (item.name != 'Sulfuras, Hand of Ragnaros') {
           item.quality = item.quality - 1;
@@ -33,7 +33,7 @@ class GildedRose {
       item.daysRemaining = item.daysRemaining - 1;
     }
     if (item.daysRemaining < 0) {
-      if (item.name != 'Aged Brie') {
+      if (item.name != 'Aged Cheddar') {
         if (item.name != 'Concert Tickets') {
           if (item.quality > 0) {
             if (item.name != 'Sulfuras, Hand of Ragnaros') {

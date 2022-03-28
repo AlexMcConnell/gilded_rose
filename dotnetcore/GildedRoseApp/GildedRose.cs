@@ -19,7 +19,7 @@ namespace ConsoleApplication
 
         public void ProcessEndOfDay(Item item)
         {
-            if (item.Name != "Aged Brie" && item.Name != "Concert Tickets")
+            if (item.Name != "Aged Cheddar" && item.Name != "Concert Tickets")
             {
                 if (item.Quality > 0)
                 {
@@ -59,7 +59,7 @@ namespace ConsoleApplication
             }
             if (item.DaysRemaining < 0)
             {
-                if (item.Name != "Aged Brie")
+                if (item.Name != "Aged Cheddar")
                 {
                     if (item.Name != "Concert Tickets")
                     {

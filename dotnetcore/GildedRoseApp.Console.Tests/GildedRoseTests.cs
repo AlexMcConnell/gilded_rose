@@ -90,7 +90,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void agedBrie_BeforeSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", DaysRemaining = 5, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 5, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(4, Items[0].DaysRemaining);
@@ -100,7 +100,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void agedBrie_WithMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", DaysRemaining = 5, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 5, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(4, Items[0].DaysRemaining);
@@ -110,7 +110,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void agedBrie_OnSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", DaysRemaining = 0, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-1, Items[0].DaysRemaining);
@@ -120,7 +120,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void agedBrie_OnSellDateWithMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", DaysRemaining = 0, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-1, Items[0].DaysRemaining);
@@ -130,7 +130,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void agedBrie_OnSellDateNearMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", DaysRemaining = 0, Quality = 49 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 49 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-1, Items[0].DaysRemaining);
@@ -140,7 +140,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void agedBrie_AfterSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", DaysRemaining = -10, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-11, Items[0].DaysRemaining);
@@ -150,7 +150,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void agedBrie_AfterSellDateWithMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", DaysRemaining = -10, Quality = 50 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-11, Items[0].DaysRemaining);
@@ -160,7 +160,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void agedBrie_AfterSellDateNearMaxQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", DaysRemaining = -10, Quality = 49 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 49 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-11, Items[0].DaysRemaining);

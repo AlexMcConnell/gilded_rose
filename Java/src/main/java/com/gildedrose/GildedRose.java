@@ -10,7 +10,7 @@ public class GildedRose {
     }
 
     public void processEndOfDay(Item item) {
-        if (!item.name.equals("Aged Brie")
+        if (!item.name.equals("Aged Cheddar")
                 && !item.name.equals("Concert Tickets")) {
             if (item.quality > 0) {
                 if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
@@ -42,7 +42,7 @@ public class GildedRose {
         }
 
         if (item.daysRemaining < 0) {
-            if (!item.name.equals("Aged Brie")) {
+            if (!item.name.equals("Aged Cheddar")) {
                 if (!item.name.equals("Concert Tickets")) {
                     if (item.quality > 0) {
                         if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {

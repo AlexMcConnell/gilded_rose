@@ -84,10 +84,10 @@ describe("Gilded Rose", () => {
     });
   });
 
-  describe("Aged Brie", () => {
+  describe("Aged Cheddar", () => {
     it("before sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Aged Brie", 5, 10)];
+      const items = [new Item("Aged Cheddar", 5, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -97,7 +97,7 @@ describe("Gilded Rose", () => {
 
     it("with max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Aged Brie", 5, 50)];
+      const items = [new Item("Aged Cheddar", 5, 50)];
 
       gildedRose.processEndOfDay(items);
 
@@ -107,7 +107,7 @@ describe("Gilded Rose", () => {
 
     it("on sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Aged Brie", 0, 10)];
+      const items = [new Item("Aged Cheddar", 0, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -117,7 +117,7 @@ describe("Gilded Rose", () => {
 
     it("on sell date with max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Aged Brie", 0, 50)];
+      const items = [new Item("Aged Cheddar", 0, 50)];
 
       gildedRose.processEndOfDay(items);
 
@@ -127,7 +127,7 @@ describe("Gilded Rose", () => {
 
     it("on sell date near max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Aged Brie", 0, 49)];
+      const items = [new Item("Aged Cheddar", 0, 49)];
 
       gildedRose.processEndOfDay(items);
 
@@ -137,7 +137,7 @@ describe("Gilded Rose", () => {
 
     it("after sell date", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Aged Brie", -10, 10)];
+      const items = [new Item("Aged Cheddar", -10, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -147,7 +147,7 @@ describe("Gilded Rose", () => {
 
     it("after sell date with max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Aged Brie", -10, 50)];
+      const items = [new Item("Aged Cheddar", -10, 50)];
 
       gildedRose.processEndOfDay(items);
 
@@ -157,7 +157,7 @@ describe("Gilded Rose", () => {
 
     it("after sell date near max quality", () => {
       const gildedRose = new GildedRose();
-      const items = [new Item("Aged Brie", -10, 49)];
+      const items = [new Item("Aged Cheddar", -10, 49)];
 
       gildedRose.processEndOfDay(items);
 

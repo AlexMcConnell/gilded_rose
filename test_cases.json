@@ -62,8 +62,8 @@
         ]
     },
     {
-        "context": "Aged Brie",
-        "itemName": "Aged Brie",
+        "context": "Aged Cheddar",
+        "itemName": "Aged Cheddar",
         "testCases": [
             {
                 "testName": "before sell date",

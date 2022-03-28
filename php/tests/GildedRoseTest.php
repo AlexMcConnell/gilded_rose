@@ -98,7 +98,7 @@ class GildedRoseTest extends TestCase
 
     public function testAgedBrie_BeforeSellDate(): void
     {
-        $items = [new Item('Aged Brie', 5, 10)];
+        $items = [new Item('Aged Cheddar', 5, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -109,7 +109,7 @@ class GildedRoseTest extends TestCase
 
     public function testAgedBrie_WithMaxQuality(): void
     {
-        $items = [new Item('Aged Brie', 5, 50)];
+        $items = [new Item('Aged Cheddar', 5, 50)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -120,7 +120,7 @@ class GildedRoseTest extends TestCase
 
     public function testAgedBrie_OnSellDate(): void
     {
-        $items = [new Item('Aged Brie', 0, 10)];
+        $items = [new Item('Aged Cheddar', 0, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -131,7 +131,7 @@ class GildedRoseTest extends TestCase
 
     public function testAgedBrie_OnSellDateWithMaxQuality(): void
     {
-        $items = [new Item('Aged Brie', 0, 50)];
+        $items = [new Item('Aged Cheddar', 0, 50)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -142,7 +142,7 @@ class GildedRoseTest extends TestCase
 
     public function testAgedBrie_OnSellDateNearMaxQuality(): void
     {
-        $items = [new Item('Aged Brie', 0, 49)];
+        $items = [new Item('Aged Cheddar', 0, 49)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -153,7 +153,7 @@ class GildedRoseTest extends TestCase
 
     public function testAgedBrie_AfterSellDate(): void
     {
-        $items = [new Item('Aged Brie', -10, 10)];
+        $items = [new Item('Aged Cheddar', -10, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -164,7 +164,7 @@ class GildedRoseTest extends TestCase
 
     public function testAgedBrie_AfterSellDateWithMaxQuality(): void
     {
-        $items = [new Item('Aged Brie', -10, 50)];
+        $items = [new Item('Aged Cheddar', -10, 50)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -175,7 +175,7 @@ class GildedRoseTest extends TestCase
 
     public function testAgedBrie_AfterSellDateNearMaxQuality(): void
     {
-        $items = [new Item('Aged Brie', -10, 49)];
+        $items = [new Item('Aged Cheddar', -10, 49)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
