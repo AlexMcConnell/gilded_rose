@@ -1,12 +1,9 @@
-Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a
-prominent city run by a friendly innkeeper named Allison. We also buy and sell only the finest goods.
-
-We have an inventory management system in place that updates our inventory for us at the end
-of every day. This app represents a portion of our system that receives a list of items in our inventory and updates them as appropriate for each item.
+Hi and welcome to team Gilded Rose. We provide a library that provides calculations for how items should change each day.
+We have no control over the app that consumes this library and cannot change how it interfaces with our library.
 
 ## We have recently signed a supplier for a new item. Please implement the following:
 
-  - "*Conjured Mana Cake*": **quality** degrades by 2 per day before the **days remaining**
+  - "*Raw Milk*": **quality** degrades by 2 per day before the **days remaining**
     date has passed and by 4 after. Its **days remaining** decreases by one every day. Its quality can never decrease to less than 0.
 
 ## The tests work and are fully comprehensive. Use them to your advantage!
