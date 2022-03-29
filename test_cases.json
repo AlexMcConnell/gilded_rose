@@ -124,7 +124,7 @@
         ]
     },
     {
-        "context": "Sulfuras",
+        "context": "Hammer",
         "itemName": "Hammer",
         "testCases": [
             {
@@ -151,7 +151,7 @@
         ]
     },
     {
-        "context": "Backstage Passes",
+        "context": "Concert Tickets",
         "itemName": "Concert Tickets",
         "testCases": [
             {
