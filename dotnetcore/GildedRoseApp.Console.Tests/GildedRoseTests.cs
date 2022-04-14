@@ -88,7 +88,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_BeforeSellDate()
+        public void agedCheddar_BeforeSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 5, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -98,7 +98,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_WithMaxQuality()
+        public void agedCheddar_WithMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 5, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -108,7 +108,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_OnSellDate()
+        public void agedCheddar_OnSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -118,7 +118,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_OnSellDateWithMaxQuality()
+        public void agedCheddar_OnSellDateWithMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -128,7 +128,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_OnSellDateNearMaxQuality()
+        public void agedCheddar_OnSellDateNearMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 49 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -138,7 +138,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_AfterSellDate()
+        public void agedCheddar_AfterSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -148,7 +148,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_AfterSellDateWithMaxQuality()
+        public void agedCheddar_AfterSellDateWithMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -158,7 +158,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void agedBrie_AfterSellDateNearMaxQuality()
+        public void agedCheddar_AfterSellDateNearMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 49 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -168,7 +168,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void sulfuras_BeforeSellDate()
+        public void hammer_BeforeSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 5, Quality = 80 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -178,7 +178,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void sulfuras_OnSellDate()
+        public void hammer_OnSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 0, Quality = 80 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -188,7 +188,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void sulfuras_AfterSellDate()
+        public void hammer_AfterSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = -10, Quality = 80 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -198,7 +198,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_LongBeforeSellDate()
+        public void concertTickets_LongBeforeSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 11, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -208,7 +208,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_LongBeforeSellDateAtMaxQuality()
+        public void concertTickets_LongBeforeSellDateAtMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 11, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -218,7 +218,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_MediumCloseToSellDateUpperBound()
+        public void concertTickets_MediumCloseToSellDateUpperBound()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -228,7 +228,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_MediumCloseToSellDateUpperBoundAtMaxQuality()
+        public void concertTickets_MediumCloseToSellDateUpperBoundAtMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -238,7 +238,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_MediumCloseToSellDateUpperBoundNearMaxQuality()
+        public void concertTickets_MediumCloseToSellDateUpperBoundNearMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 49 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -248,7 +248,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_MediumCloseToSellDateLowerBound()
+        public void concertTickets_MediumCloseToSellDateLowerBound()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -258,7 +258,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_MediumCloseToSellDateLowerBoundAtMaxQuality()
+        public void concertTickets_MediumCloseToSellDateLowerBoundAtMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -268,7 +268,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_MediumCloseToSellDateLowerBoundNearMaxQuality()
+        public void concertTickets_MediumCloseToSellDateLowerBoundNearMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 49 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -278,7 +278,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_VeryCloseToSellDateUpperBound()
+        public void concertTickets_VeryCloseToSellDateUpperBound()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -288,7 +288,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_VeryCloseToSellDateUpperBoundAtMaxQuality()
+        public void concertTickets_VeryCloseToSellDateUpperBoundAtMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -298,7 +298,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_VeryCloseToSellDateUpperBoundNearMaxQuality()
+        public void concertTickets_VeryCloseToSellDateUpperBoundNearMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 48 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -308,7 +308,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_VeryCloseToSellDateLowerBound()
+        public void concertTickets_VeryCloseToSellDateLowerBound()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -318,7 +318,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_VeryCloseToSellDateLowerBoundAtMaxQuality()
+        public void concertTickets_VeryCloseToSellDateLowerBoundAtMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -328,7 +328,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_VeryCloseToSellDateLowerBoundNearMaxQuality()
+        public void concertTickets_VeryCloseToSellDateLowerBoundNearMaxQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 48 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -338,7 +338,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_OnSellDate()
+        public void concertTickets_OnSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 0, Quality = 50 } };
             new GildedRose().ProcessEndOfDay(Items);
@@ -348,7 +348,7 @@ namespace GildedRoseApp.Console.Tests
         }
 
         [Fact]
-        public void backstagePass_AfterSellDate()
+        public void concertTickets_AfterSellDate()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = -10, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);

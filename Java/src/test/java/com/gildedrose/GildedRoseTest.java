@@ -97,7 +97,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_BeforeSellDate() {
+    void agedCheddar_BeforeSellDate() {
         Item[] items = {new Item("Aged Cheddar", 5, 10)};
         GildedRose app = new GildedRose();
 
@@ -108,7 +108,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_WithMaxQuality() {
+    void agedCheddar_WithMaxQuality() {
         Item[] items = {new Item("Aged Cheddar", 5, 50)};
         GildedRose app = new GildedRose();
 
@@ -119,7 +119,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_OnSellDate() {
+    void agedCheddar_OnSellDate() {
         Item[] items = {new Item("Aged Cheddar", 0, 10)};
         GildedRose app = new GildedRose();
 
@@ -130,7 +130,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_OnSellDateWithMaxQuality() {
+    void agedCheddar_OnSellDateWithMaxQuality() {
         Item[] items = {new Item("Aged Cheddar", 0, 50)};
         GildedRose app = new GildedRose();
 
@@ -141,7 +141,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_OnSellDateNearMaxQuality() {
+    void agedCheddar_OnSellDateNearMaxQuality() {
         Item[] items = {new Item("Aged Cheddar", 0, 49)};
         GildedRose app = new GildedRose();
 
@@ -152,7 +152,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_AfterSellDate() {
+    void agedCheddar_AfterSellDate() {
         Item[] items = {new Item("Aged Cheddar", -10, 10)};
         GildedRose app = new GildedRose();
 
@@ -163,7 +163,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_AfterSellDateWithMaxQuality() {
+    void agedCheddar_AfterSellDateWithMaxQuality() {
         Item[] items = {new Item("Aged Cheddar", -10, 50)};
         GildedRose app = new GildedRose();
 
@@ -174,7 +174,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void agedBrie_AfterSellDateNearMaxQuality() {
+    void agedCheddar_AfterSellDateNearMaxQuality() {
         Item[] items = {new Item("Aged Cheddar", -10, 49)};
         GildedRose app = new GildedRose();
 
@@ -185,7 +185,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void sulfuras_BeforeSellDate() {
+    void hammer_BeforeSellDate() {
         Item[] items = {new Item("Hammer", 5, 80)};
         GildedRose app = new GildedRose();
 
@@ -196,7 +196,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void sulfuras_OnSellDate() {
+    void hammer_OnSellDate() {
         Item[] items = {new Item("Hammer", 0, 80)};
         GildedRose app = new GildedRose();
 
@@ -207,7 +207,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void sulfuras_AfterSellDate() {
+    void hammer_AfterSellDate() {
         Item[] items = {new Item("Hammer", -10, 80)};
         GildedRose app = new GildedRose();
 
@@ -218,7 +218,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_LongBeforeSellDate() {
+    void concertTickets_LongBeforeSellDate() {
         Item[] items = {new Item("Concert Tickets", 11, 10)};
         GildedRose app = new GildedRose();
 
@@ -229,7 +229,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_LongBeforeSellDateAtMaxQuality() {
+    void concertTickets_LongBeforeSellDateAtMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 11, 50)};
         GildedRose app = new GildedRose();
 
@@ -240,7 +240,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_MediumCloseToSellDateUpperBound() {
+    void concertTickets_MediumCloseToSellDateUpperBound() {
         Item[] items = {new Item("Concert Tickets", 10, 10)};
         GildedRose app = new GildedRose();
 
@@ -251,7 +251,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_MediumCloseToSellDateUpperBoundAtMaxQuality() {
+    void concertTickets_MediumCloseToSellDateUpperBoundAtMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 10, 50)};
         GildedRose app = new GildedRose();
 
@@ -262,7 +262,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_MediumCloseToSellDateUpperBoundNearMaxQuality() {
+    void concertTickets_MediumCloseToSellDateUpperBoundNearMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 10, 49)};
         GildedRose app = new GildedRose();
 
@@ -273,7 +273,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_MediumCloseToSellDateLowerBound() {
+    void concertTickets_MediumCloseToSellDateLowerBound() {
         Item[] items = {new Item("Concert Tickets", 6, 10)};
         GildedRose app = new GildedRose();
 
@@ -284,7 +284,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_MediumCloseToSellDateLowerBoundAtMaxQuality() {
+    void concertTickets_MediumCloseToSellDateLowerBoundAtMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 6, 50)};
         GildedRose app = new GildedRose();
 
@@ -295,7 +295,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_MediumCloseToSellDateLowerBoundNearMaxQuality() {
+    void concertTickets_MediumCloseToSellDateLowerBoundNearMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 6, 49)};
         GildedRose app = new GildedRose();
 
@@ -306,7 +306,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_VeryCloseToSellDateUpperBound() {
+    void concertTickets_VeryCloseToSellDateUpperBound() {
         Item[] items = {new Item("Concert Tickets", 5, 10)};
         GildedRose app = new GildedRose();
 
@@ -317,7 +317,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_VeryCloseToSellDateUpperBoundAtMaxQuality() {
+    void concertTickets_VeryCloseToSellDateUpperBoundAtMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 5, 50)};
         GildedRose app = new GildedRose();
 
@@ -328,7 +328,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_VeryCloseToSellDateUpperBoundNearMaxQuality() {
+    void concertTickets_VeryCloseToSellDateUpperBoundNearMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 5, 48)};
         GildedRose app = new GildedRose();
 
@@ -339,7 +339,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_VeryCloseToSellDateLowerBound() {
+    void concertTickets_VeryCloseToSellDateLowerBound() {
         Item[] items = {new Item("Concert Tickets", 1, 10)};
         GildedRose app = new GildedRose();
 
@@ -350,7 +350,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_VeryCloseToSellDateLowerBoundAtMaxQuality() {
+    void concertTickets_VeryCloseToSellDateLowerBoundAtMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 1, 50)};
         GildedRose app = new GildedRose();
 
@@ -361,7 +361,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_VeryCloseToSellDateLowerBoundNearMaxQuality() {
+    void concertTickets_VeryCloseToSellDateLowerBoundNearMaxQuality() {
         Item[] items = {new Item("Concert Tickets", 1, 48)};
         GildedRose app = new GildedRose();
 
@@ -372,7 +372,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_OnSellDate() {
+    void concertTickets_OnSellDate() {
         Item[] items = {new Item("Concert Tickets", 0, 10)};
         GildedRose app = new GildedRose();
 
@@ -383,7 +383,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void backstagePass_AfterSellDate() {
+    void concertTickets_AfterSellDate() {
         Item[] items = {new Item("Concert Tickets", -10, 10)};
         GildedRose app = new GildedRose();
 
