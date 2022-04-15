@@ -176,7 +176,7 @@
                 "expectedQuality": 12
             },
             {
-                "testName": "medium close to sell date upper bound at max qualityd",
+                "testName": "medium close to sell date upper bound at max quality",
                 "startingDaysRemaining": 10,
                 "startingQuality": 50,
                 "expectedDaysRemaining": 9,
@@ -197,7 +197,7 @@
                 "expectedQuality": 12
             },
             {
-                "testName": "medium close to sell date lower bound at max qualityd",
+                "testName": "medium close to sell date lower bound at max quality",
                 "startingDaysRemaining": 6,
                 "startingQuality": 50,
                 "expectedDaysRemaining": 5,
@@ -218,7 +218,7 @@
                 "expectedQuality": 13
             },
             {
-                "testName": "very close to sell date upper bound at max qualityd",
+                "testName": "very close to sell date upper bound at max quality",
                 "startingDaysRemaining": 5,
                 "startingQuality": 50,
                 "expectedDaysRemaining": 4,
@@ -239,7 +239,7 @@
                 "expectedQuality": 13
             },
             {
-                "testName": "very close to sell date lower bound at max qualityd",
+                "testName": "very close to sell date lower bound at max quality",
                 "startingDaysRemaining": 1,
                 "startingQuality": 50,
                 "expectedDaysRemaining": 0,
