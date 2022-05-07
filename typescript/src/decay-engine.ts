@@ -33,7 +33,7 @@ export class DecayEngine {
     });
 
     if (!gradient) {
-      throw new Error("no valid quality range found");
+      throw new Error("no valid decay gradient found");
     }
 
     item.quality += gradient.rate;
