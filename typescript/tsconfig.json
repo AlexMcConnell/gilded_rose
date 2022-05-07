@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "es2020"],
+    "target": "es2020",
+    "module": "es6",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": ".build",
+    "rootDir": "./",
+    "baseUrl": ".",
+    "paths": {}
+  },
+  "include": ["src/**/*.ts", "src/**/*.json", "tests/**/*.ts"],
+  "exclude": ["node_modules/**/*", ".vscode/**/*"]
+}
