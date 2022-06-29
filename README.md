@@ -6,6 +6,8 @@ Items have the following fields:
 **days remaining** - The number of days remaining until the item "expires".
 **quality** - The quality of the item.
 
+By default, an item degrades 1 **days remaining**, and it degrades **quality** or by 1 before it expires and by 2 after. But there are also several special items that behave differently from normal items.
+
 ## We have recently signed a supplier for a new item. Please implement the following:
 
   - "*Raw Milk*": **quality** degrades by 2 per day before the **days remaining**
