@@ -1,7 +1,7 @@
 class GildedRose {
   processEndOfDay(items) {
     for (let i = 0; i < items.length; i++) {
-      this.processItemEndOfDay(items[i])
+      this.processItemEndOfDay(items[i]);
     }
   }
 
@@ -53,5 +53,5 @@ class GildedRose {
 }
 
 module.exports = {
-  GildedRose
-}
+  GildedRose,
+};
