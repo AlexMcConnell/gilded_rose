@@ -10,7 +10,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void normalItem_BeforeSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = 5, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 5, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(4, Items[0].DaysRemaining);
@@ -20,7 +20,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void normalItem_WithMinQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = 5, Quality = 0 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 5, Quality = 0 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(4, Items[0].DaysRemaining);
@@ -30,7 +30,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void normalItem_OnSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = 0, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 0, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-1, Items[0].DaysRemaining);
@@ -40,7 +40,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void normalItem_OnSellDateWithMinQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = 0, Quality = 0 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 0, Quality = 0 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-1, Items[0].DaysRemaining);
@@ -50,7 +50,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void normalItem_OnSellDateNearMinQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = 0, Quality = 1 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 0, Quality = 1 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-1, Items[0].DaysRemaining);
@@ -60,7 +60,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void normalItem_AfterSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = -10, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = -10, Quality = 10 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-11, Items[0].DaysRemaining);
@@ -70,7 +70,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void normalItem_AfterSellDateWithMinQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = -10, Quality = 0 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = -10, Quality = 0 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-11, Items[0].DaysRemaining);
@@ -80,7 +80,7 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void normalItem_AfterSellDateNearMinQuality()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", DaysRemaining = -10, Quality = 1 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = -10, Quality = 1 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-11, Items[0].DaysRemaining);

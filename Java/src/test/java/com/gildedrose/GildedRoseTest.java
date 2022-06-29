@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GildedRoseTest {
     @Test
     void normalItem_BeforeSellDate() {
-        Item[] items = {new Item("foo", 5, 10)};
+        Item[] items = {new Item("randomstring", 5, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -21,7 +21,7 @@ class GildedRoseTest {
 
     @Test
     void normalItem_WithMinQuality() {
-        Item[] items = {new Item("foo", 5, 0)};
+        Item[] items = {new Item("randomstring", 5, 0)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -32,7 +32,7 @@ class GildedRoseTest {
 
     @Test
     void normalItem_OnSellDate() {
-        Item[] items = {new Item("foo", 0, 10)};
+        Item[] items = {new Item("randomstring", 0, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -43,7 +43,7 @@ class GildedRoseTest {
 
     @Test
     void normalItem_OnSellDateWithMinQuality() {
-        Item[] items = {new Item("foo", 0, 0)};
+        Item[] items = {new Item("randomstring", 0, 0)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -54,7 +54,7 @@ class GildedRoseTest {
 
     @Test
     void normalItem_OnSellDateNearMinQuality() {
-        Item[] items = {new Item("foo", 0, 1)};
+        Item[] items = {new Item("randomstring", 0, 1)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -65,7 +65,7 @@ class GildedRoseTest {
 
     @Test
     void normalItem_AfterSellDate() {
-        Item[] items = {new Item("foo", -10, 10)};
+        Item[] items = {new Item("randomstring", -10, 10)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -76,7 +76,7 @@ class GildedRoseTest {
 
     @Test
     void normalItem_AfterSellDateWithMinQuality() {
-        Item[] items = {new Item("foo", -10, 0)};
+        Item[] items = {new Item("randomstring", -10, 0)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
@@ -87,7 +87,7 @@ class GildedRoseTest {
 
     @Test
     void normalItem_AfterSellDateNearMinQuality() {
-        Item[] items = {new Item("foo", -10, 1)};
+        Item[] items = {new Item("randomstring", -10, 1)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);

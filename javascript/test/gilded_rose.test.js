@@ -5,7 +5,7 @@ describe('Gilded Rose', () => {
   describe('Normal Item', () => {
     it('before sell date', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('foo', 5, 10)];
+      const items = [new Item('randomstring', 5, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -15,7 +15,7 @@ describe('Gilded Rose', () => {
 
     it('with min quality', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('foo', 5, 0)];
+      const items = [new Item('randomstring', 5, 0)];
 
       gildedRose.processEndOfDay(items);
 
@@ -25,7 +25,7 @@ describe('Gilded Rose', () => {
 
     it('on sell date', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('foo', 0, 10)];
+      const items = [new Item('randomstring', 0, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -35,7 +35,7 @@ describe('Gilded Rose', () => {
 
     it('on sell date with min quality', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('foo', 0, 0)];
+      const items = [new Item('randomstring', 0, 0)];
 
       gildedRose.processEndOfDay(items);
 
@@ -45,7 +45,7 @@ describe('Gilded Rose', () => {
 
     it('on sell date near min quality', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('foo', 0, 1)];
+      const items = [new Item('randomstring', 0, 1)];
 
       gildedRose.processEndOfDay(items);
 
@@ -55,7 +55,7 @@ describe('Gilded Rose', () => {
 
     it('after sell date', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('foo', -10, 10)];
+      const items = [new Item('randomstring', -10, 10)];
 
       gildedRose.processEndOfDay(items);
 
@@ -65,7 +65,7 @@ describe('Gilded Rose', () => {
 
     it('after sell date with min quality', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('foo', -10, 0)];
+      const items = [new Item('randomstring', -10, 0)];
 
       gildedRose.processEndOfDay(items);
 
@@ -75,7 +75,7 @@ describe('Gilded Rose', () => {
 
     it('after sell date near min quality', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('foo', -10, 1)];
+      const items = [new Item('randomstring', -10, 1)];
 
       gildedRose.processEndOfDay(items);
 

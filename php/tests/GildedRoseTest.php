@@ -10,7 +10,7 @@ class GildedRoseTest extends TestCase
 {
     public function testNormalItem_BeforeSellDate(): void
     {
-        $items = [new Item('foo', 5, 10)];
+        $items = [new Item('randomstring', 5, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -21,7 +21,7 @@ class GildedRoseTest extends TestCase
 
     public function testNormalItem_WithMinQuality(): void
     {
-        $items = [new Item('foo', 5, 0)];
+        $items = [new Item('randomstring', 5, 0)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -32,7 +32,7 @@ class GildedRoseTest extends TestCase
 
     public function testNormalItem_OnSellDate(): void
     {
-        $items = [new Item('foo', 0, 10)];
+        $items = [new Item('randomstring', 0, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -43,7 +43,7 @@ class GildedRoseTest extends TestCase
 
     public function testNormalItem_OnSellDateWithMinQuality(): void
     {
-        $items = [new Item('foo', 0, 0)];
+        $items = [new Item('randomstring', 0, 0)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -54,7 +54,7 @@ class GildedRoseTest extends TestCase
 
     public function testNormalItem_OnSellDateNearMinQuality(): void
     {
-        $items = [new Item('foo', 0, 1)];
+        $items = [new Item('randomstring', 0, 1)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -65,7 +65,7 @@ class GildedRoseTest extends TestCase
 
     public function testNormalItem_AfterSellDate(): void
     {
-        $items = [new Item('foo', -10, 10)];
+        $items = [new Item('randomstring', -10, 10)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -76,7 +76,7 @@ class GildedRoseTest extends TestCase
 
     public function testNormalItem_AfterSellDateWithMinQuality(): void
     {
-        $items = [new Item('foo', -10, 0)];
+        $items = [new Item('randomstring', -10, 0)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
@@ -87,7 +87,7 @@ class GildedRoseTest extends TestCase
 
     public function testNormalItem_AfterSellDateNearMinQuality(): void
     {
-        $items = [new Item('foo', -10, 1)];
+        $items = [new Item('randomstring', -10, 1)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
