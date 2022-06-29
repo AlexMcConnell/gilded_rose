@@ -186,35 +186,35 @@ class GildedRoseTest extends TestCase
 
     public function testHammer_BeforeSellDate(): void
     {
-        $items = [new Item('Hammer', 5, 80)];
+        $items = [new Item('Hammer', 5, 40)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
 
         $this->assertSame(5, $items[0]->days_remaining);
-        $this->assertSame(80, $items[0]->quality);
+        $this->assertSame(40, $items[0]->quality);
     }
 
     public function testHammer_OnSellDate(): void
     {
-        $items = [new Item('Hammer', 0, 80)];
+        $items = [new Item('Hammer', 0, 40)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
 
         $this->assertSame(0, $items[0]->days_remaining);
-        $this->assertSame(80, $items[0]->quality);
+        $this->assertSame(40, $items[0]->quality);
     }
 
     public function testHammer_AfterSellDate(): void
     {
-        $items = [new Item('Hammer', -10, 80)];
+        $items = [new Item('Hammer', -10, 40)];
         $gildedRose = new GildedRose();
 
         $gildedRose->processEndOfDay($items);
 
         $this->assertSame(-10, $items[0]->days_remaining);
-        $this->assertSame(80, $items[0]->quality);
+        $this->assertSame(40, $items[0]->quality);
     }
 
     public function testConcertTickets_LongBeforeSellDate(): void

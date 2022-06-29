@@ -186,35 +186,35 @@ class GildedRoseTest {
 
     @Test
     void hammer_BeforeSellDate() {
-        Item[] items = {new Item("Hammer", 5, 80)};
+        Item[] items = {new Item("Hammer", 5, 40)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
 
         assertEquals(5, items[0].daysRemaining);
-        assertEquals(80, items[0].quality);
+        assertEquals(40, items[0].quality);
     }
 
     @Test
     void hammer_OnSellDate() {
-        Item[] items = {new Item("Hammer", 0, 80)};
+        Item[] items = {new Item("Hammer", 0, 40)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
 
         assertEquals(0, items[0].daysRemaining);
-        assertEquals(80, items[0].quality);
+        assertEquals(40, items[0].quality);
     }
 
     @Test
     void hammer_AfterSellDate() {
-        Item[] items = {new Item("Hammer", -10, 80)};
+        Item[] items = {new Item("Hammer", -10, 40)};
         GildedRose app = new GildedRose();
 
         app.processEndOfDay(items);
 
         assertEquals(-10, items[0].daysRemaining);
-        assertEquals(80, items[0].quality);
+        assertEquals(40, items[0].quality);
     }
 
     @Test

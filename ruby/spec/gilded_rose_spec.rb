@@ -140,27 +140,27 @@ RSpec.describe GildedRose do
 
   context "Hammer" do
     it "before sell date" do
-      items = [Item.new(name: "Hammer", days_remaining: 10, quality: 80)]
+      items = [Item.new(name: "Hammer", days_remaining: 10, quality: 40)]
     
       subject.process_end_of_day(items)
     
-      expect(items[0]).to have_attributes(days_remaining: 10, quality: 80)
+      expect(items[0]).to have_attributes(days_remaining: 10, quality: 40)
     end
 
     it "on sell date" do
-      items = [Item.new(name: "Hammer", days_remaining: 0, quality: 80)]
+      items = [Item.new(name: "Hammer", days_remaining: 0, quality: 40)]
     
       subject.process_end_of_day(items)
     
-      expect(items[0]).to have_attributes(days_remaining: 0, quality: 80)
+      expect(items[0]).to have_attributes(days_remaining: 0, quality: 40)
     end
 
     it "after sell date" do
-      items = [Item.new(name: "Hammer", days_remaining: -10, quality: 80)]
+      items = [Item.new(name: "Hammer", days_remaining: -10, quality: 40)]
     
       subject.process_end_of_day(items)
     
-      expect(items[0]).to have_attributes(days_remaining: -10, quality: 80)
+      expect(items[0]).to have_attributes(days_remaining: -10, quality: 40)
     end
   end
 

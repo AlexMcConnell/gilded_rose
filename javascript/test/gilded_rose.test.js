@@ -169,32 +169,32 @@ describe('Gilded Rose', () => {
   describe('Hammer', () => {
     it('before sell date', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('Hammer', 5, 80)];
+      const items = [new Item('Hammer', 5, 40)];
 
       gildedRose.processEndOfDay(items);
 
       expect(items[0].daysRemaining).toBe(5);
-      expect(items[0].quality).toBe(80);
+      expect(items[0].quality).toBe(40);
     });
 
     it('on sell date', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('Hammer', 0, 80)];
+      const items = [new Item('Hammer', 0, 40)];
 
       gildedRose.processEndOfDay(items);
 
       expect(items[0].daysRemaining).toBe(0);
-      expect(items[0].quality).toBe(80);
+      expect(items[0].quality).toBe(40);
     });
 
     it('after sell date', () => {
       const gildedRose = new GildedRose();
-      const items = [new Item('Hammer', -10, 80)];
+      const items = [new Item('Hammer', -10, 40)];
 
       gildedRose.processEndOfDay(items);
 
       expect(items[0].daysRemaining).toBe(-10);
-      expect(items[0].quality).toBe(80);
+      expect(items[0].quality).toBe(40);
     });
   });
 

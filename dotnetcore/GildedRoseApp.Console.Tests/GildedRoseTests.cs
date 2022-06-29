@@ -170,31 +170,31 @@ namespace GildedRoseApp.Console.Tests
         [Fact]
         public void hammer_BeforeSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 5, Quality = 80 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 5, Quality = 40 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(5, Items[0].DaysRemaining);
-            Assert.Equal(80, Items[0].Quality);
+            Assert.Equal(40, Items[0].Quality);
         }
 
         [Fact]
         public void hammer_OnSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 0, Quality = 80 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 0, Quality = 40 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(0, Items[0].DaysRemaining);
-            Assert.Equal(80, Items[0].Quality);
+            Assert.Equal(40, Items[0].Quality);
         }
 
         [Fact]
         public void hammer_AfterSellDate()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = -10, Quality = 80 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = -10, Quality = 40 } };
             new GildedRose().ProcessEndOfDay(Items);
 
             Assert.Equal(-10, Items[0].DaysRemaining);
-            Assert.Equal(80, Items[0].Quality);
+            Assert.Equal(40, Items[0].Quality);
         }
 
         [Fact]
