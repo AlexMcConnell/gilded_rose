@@ -1,0 +1,35 @@
+class GildedRose:
+    def process_end_of_day(self, items):
+        for item in items:
+            self.process_item_end_of_day(item)
+
+    def process_item_end_of_day(self, item):
+        if item.name != 'Aged Cheddar' and item.name != 'Concert Tickets':
+            if item.quality > 0:
+                if item.name != 'Hammer':
+                    item.quality = item.quality - 1
+        else:
+            if item.quality < 50:
+                item.quality = item.quality + 1
+                if item.name == 'Concert Tickets':
+                    if item.days_remaining < 11:
+                        if item.quality < 50:
+                            item.quality = item.quality + 1
+                    if item.days_remaining < 6:
+                        if item.quality < 50:
+                            item.quality = item.quality + 1
+
+        if item.name != 'Hammer':
+            item.days_remaining = item.days_remaining - 1
+
+        if item.days_remaining < 0:
+            if item.name != 'Aged Cheddar':
+                if item.name != 'Concert Tickets':
+                    if item.quality > 0:
+                        if item.name != 'Hammer':
+                            item.quality = item.quality - 1
+                else:
+                    item.quality = item.quality - item.quality
+            else:
+                if item.quality < 50:
+                    item.quality = item.quality + 1
