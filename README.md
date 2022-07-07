@@ -1,12 +1,24 @@
-Hi and welcome to team Gilded Rose. We provide a library that provides calculations for how items should change each day.
-We have no control over the app that consumes this library and cannot change how it interfaces with our library.
+Hi and welcome to team Gilded Rose. We provide an inventory management library that provides calculations for how items should change each day.
 
 Items have the following fields:
+
 **name** - The name of the item.
+
 **days remaining** - The number of days remaining until the item "expires".
+
 **quality** - The quality of the item.
 
-By default, an item degrades 1 **days remaining**, and it degrades **quality** or by 1 before it expires and by 2 after. But there are also several special items that behave differently from normal items.
+Most items follow these rules at the end of each day:
+
+**days remaining** decreases by 1
+
+**quality** decreases by 1 if **days remaining** has not passed 0
+
+**quality** decreases by 2 if **days remaining** has passed 0
+
+**quality** cannot go below 0
+
+In additional to the standard rules for items, there are a few special cases that have their own rules for how they behave.
 
 ## We have recently signed a supplier for a new item. Please implement the following:
 
@@ -15,5 +27,4 @@ By default, an item degrades 1 **days remaining**, and it degrades **quality** o
 
 ## The tests work and are fully comprehensive. Use them to your advantage!
 
-Remember, this app is just a piece of a greater whole, so respect the contract defined in the tests.
-You may add tests, but you should not change the existing tests.
+Remember, this app is just a piece of a greater whole, so respect the contract defined in the tests, as they represent how other apps consume our library. You may add tests, but you should not change the existing tests, as they represent how other applications interface with our app.
