@@ -40,7 +40,7 @@ In addition to the standard rules for items, there are special cases that have t
 
 **THEN** that item's days remaining decreases by 1
 
-**AND** that item's quality decreases by 1
+**AND** that item's quality decreases by 2
 
 <br>
 
@@ -52,7 +52,7 @@ In addition to the standard rules for items, there are special cases that have t
 
 **THEN** that item's days remaining decreases by 1
 
-**AND** that item's quality decreases by 2
+**AND** that item's quality decreases by 4
 
 <br>
 
