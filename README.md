@@ -32,11 +32,11 @@ In addition to the standard rules for items, there are special cases that have t
 
 ## Here is the acceptance criteria for the story you are to implement:
 
-**GIVEN** a process end of day request is made
-
-**WHEN** one of the items is named *Raw Milk*
+**GIVEN** inventory includes an item named *Raw Milk*
 
 **AND** days remaining for that item has not passed 0
+
+**WHEN** a process end of day request is made
 
 **THEN** that item's days remaining decreases by 1
 
@@ -44,11 +44,11 @@ In addition to the standard rules for items, there are special cases that have t
 
 <br>
 
-**GIVEN** a process end of day request is made
-
-**WHEN** one of the items is named *Raw Milk*
+**GIVEN** inventory includes an item named *Raw Milk*
 
 **AND** days remaining for that item has passed 0
+
+**WHEN** a process end of day request is made
 
 **THEN** that item's days remaining decreases by 1
 
