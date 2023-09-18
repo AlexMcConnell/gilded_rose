@@ -1,6 +1,4 @@
-Hello, and welcome to team. First, a little background:
-
-We provide an inventory management library that provides calculations for how items should change each day.
+This is an inventory updating library that provides logic for how items should change each day.
 
 <br>
 
@@ -14,45 +12,17 @@ We provide an inventory management library that provides calculations for how it
 
 <br>
 
-## Most items follow these rules at the end of each day:
-
-**days remaining** decreases by 1
-
-**quality** decreases by 1 if **days remaining** has not passed 0
-
-**quality** decreases by 2 if **days remaining** has passed 0
-
-**quality** cannot go below 0
+At the end of each day, a process runs to update each item. Different types of items have their **days remaining** and **quality** values updated in different ways.
 
 <br>
 
-In addition to the standard rules for items, there are special cases that have their own rules for how they behave. The logic for these can be found in the code and tests.
+## Your assignment:
 
-<br>
+Please implement the following item:
 
-## Here is the acceptance criteria for the story you are to implement:
+**name** - Raw Milk
 
-**GIVEN** inventory includes an item named *Raw Milk*
-
-**AND** days remaining for that item has not passed 0
-
-**WHEN** a process end of day request is made
-
-**THEN** that item's days remaining decreases by 1
-
-**AND** that item's quality decreases by 2
-
-<br>
-
-**GIVEN** inventory includes an item named *Raw Milk*
-
-**AND** days remaining for that item has passed 0
-
-**WHEN** a process end of day request is made
-
-**THEN** that item's days remaining decreases by 1
-
-**AND** that item's quality decreases by 4
+At the end of each day, if the days remaining for **Raw Milk** is greater than 0, its quality decreases by 2. If the days remaining for  **Raw Milk** is less than 0, its quality decreases by 4. The quality of Raw Milk can never be less than 0.
 
 <br>
 
