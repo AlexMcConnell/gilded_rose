@@ -22,7 +22,7 @@ Please implement the following item:
 
 **name** - Raw Milk
 
-At the end of each day, if the days remaining for **Raw Milk** is greater than 0, its quality decreases by 2. If the days remaining for  **Raw Milk** is 0 or less, its quality decreases by 4. The quality of Raw Milk can never be less than 0.
+At the end of each day, if the days remaining for **Raw Milk** is greater than 0, its quality decreases by 2. If the days remaining for  **Raw Milk** is 0 or less, its quality decreases by 4. The days remaining for **Raw Milk** decreases by 1. The quality of **Raw Milk** can never be less than 0.
 
 <br>
 
