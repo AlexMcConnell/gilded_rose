@@ -7,354 +7,375 @@ namespace GildedRoseApp.Console.Tests
 {
     public class GildedRoseTests
     {
-        [Fact]
-        public void normalItem_BeforeSellDate()
+        public class NormalItemTests
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 5, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
+            [Fact]
+            public void BeforeSellDate()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "randomstring", DaysRemaining = 5, Quality = 10}};
+                new GildedRose().ProcessEndOfDay(items);
 
-            Assert.Equal(4, Items[0].DaysRemaining);
-            Assert.Equal(9, Items[0].Quality);
+                Assert.Equal(4, items[0].DaysRemaining);
+                Assert.Equal(9, items[0].Quality);
+            }
+
+            [Fact]
+            public void WithMinQuality()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "randomstring", DaysRemaining = 5, Quality = 0}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(4, items[0].DaysRemaining);
+                Assert.Equal(0, items[0].Quality);
+            }
+
+            [Fact]
+            public void OnSellDate()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "randomstring", DaysRemaining = 0, Quality = 10}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-1, items[0].DaysRemaining);
+                Assert.Equal(8, items[0].Quality);
+            }
+
+            [Fact]
+            public void OnSellDateWithMinQuality()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "randomstring", DaysRemaining = 0, Quality = 0}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-1, items[0].DaysRemaining);
+                Assert.Equal(0, items[0].Quality);
+            }
+
+            [Fact]
+            public void OnSellDateNearMinQuality()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "randomstring", DaysRemaining = 0, Quality = 1}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-1, items[0].DaysRemaining);
+                Assert.Equal(0, items[0].Quality);
+            }
+
+            [Fact]
+            public void AfterSellDate()
+            {
+                IList<Item> items = new List<Item>
+                    {new Item {Name = "randomstring", DaysRemaining = -10, Quality = 10}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-11, items[0].DaysRemaining);
+                Assert.Equal(8, items[0].Quality);
+            }
+
+            [Fact]
+            public void AfterSellDateWithMinQuality()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "randomstring", DaysRemaining = -10, Quality = 0}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-11, items[0].DaysRemaining);
+                Assert.Equal(0, items[0].Quality);
+            }
+
+            [Fact]
+            public void AfterSellDateNearMinQuality()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "randomstring", DaysRemaining = -10, Quality = 1}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-11, items[0].DaysRemaining);
+                Assert.Equal(0, items[0].Quality);
+            }
         }
 
-        [Fact]
-        public void normalItem_WithMinQuality()
+        public class AgedCheddarTests
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 5, Quality = 0 } };
-            new GildedRose().ProcessEndOfDay(Items);
+            [Fact]
+            public void BeforeSellDate()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "Aged Cheddar", DaysRemaining = 5, Quality = 10}};
+                new GildedRose().ProcessEndOfDay(items);
 
-            Assert.Equal(4, Items[0].DaysRemaining);
-            Assert.Equal(0, Items[0].Quality);
+                Assert.Equal(4, items[0].DaysRemaining);
+                Assert.Equal(11, items[0].Quality);
+            }
+
+            [Fact]
+            public void WithMaxQuality()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "Aged Cheddar", DaysRemaining = 5, Quality = 50}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(4, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void OnSellDate()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "Aged Cheddar", DaysRemaining = 0, Quality = 10}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-1, items[0].DaysRemaining);
+                Assert.Equal(12, items[0].Quality);
+            }
+
+            [Fact]
+            public void OnSellDateWithMaxQuality()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "Aged Cheddar", DaysRemaining = 0, Quality = 50}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-1, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void OnSellDateNearMaxQuality()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "Aged Cheddar", DaysRemaining = 0, Quality = 49}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-1, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void AfterSellDate()
+            {
+                IList<Item> items = new List<Item>
+                    {new Item {Name = "Aged Cheddar", DaysRemaining = -10, Quality = 10}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-11, items[0].DaysRemaining);
+                Assert.Equal(12, items[0].Quality);
+            }
+
+            [Fact]
+            public void AfterSellDateWithMaxQuality()
+            {
+                IList<Item> items = new List<Item>
+                    {new Item {Name = "Aged Cheddar", DaysRemaining = -10, Quality = 50}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-11, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void AfterSellDateNearMaxQuality()
+            {
+                IList<Item> items = new List<Item>
+                    {new Item {Name = "Aged Cheddar", DaysRemaining = -10, Quality = 49}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-11, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+
         }
 
-        [Fact]
-        public void normalItem_OnSellDate()
+        public class HammerTests
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 0, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
+            [Fact]
+            public void hammer_BeforeSellDate()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "Hammer", DaysRemaining = 5, Quality = 40}};
+                new GildedRose().ProcessEndOfDay(items);
 
-            Assert.Equal(-1, Items[0].DaysRemaining);
-            Assert.Equal(8, Items[0].Quality);
+                Assert.Equal(5, items[0].DaysRemaining);
+                Assert.Equal(40, items[0].Quality);
+            }
+
+            [Fact]
+            public void hammer_OnSellDate()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "Hammer", DaysRemaining = 0, Quality = 40}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(0, items[0].DaysRemaining);
+                Assert.Equal(40, items[0].Quality);
+            }
+
+            [Fact]
+            public void hammer_AfterSellDate()
+            {
+                IList<Item> items = new List<Item> {new Item {Name = "Hammer", DaysRemaining = -10, Quality = 40}};
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-10, items[0].DaysRemaining);
+                Assert.Equal(40, items[0].Quality);
+            }
         }
 
-        [Fact]
-        public void normalItem_OnSellDateWithMinQuality()
+        public class ConcertTicketsTests
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 0, Quality = 0 } };
-            new GildedRose().ProcessEndOfDay(Items);
+            [Fact]
+            public void LongBeforeSellDate()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 11, Quality = 10 } };
+                new GildedRose().ProcessEndOfDay(items);
 
-            Assert.Equal(-1, Items[0].DaysRemaining);
-            Assert.Equal(0, Items[0].Quality);
+                Assert.Equal(10, items[0].DaysRemaining);
+                Assert.Equal(11, items[0].Quality);
+            }
+
+            [Fact]
+            public void LongBeforeSellDateAtMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 11, Quality = 50 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(10, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void MediumCloseToSellDateUpperBound()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 10 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(9, items[0].DaysRemaining);
+                Assert.Equal(12, items[0].Quality);
+            }
+
+            [Fact]
+            public void MediumCloseToSellDateUpperBoundAtMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 50 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(9, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void MediumCloseToSellDateUpperBoundNearMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 49 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(9, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void MediumCloseToSellDateLowerBound()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 10 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(5, items[0].DaysRemaining);
+                Assert.Equal(12, items[0].Quality);
+            }
+
+            [Fact]
+            public void MediumCloseToSellDateLowerBoundAtMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 50 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(5, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void MediumCloseToSellDateLowerBoundNearMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 49 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(5, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void VeryCloseToSellDateUpperBound()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 10 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(4, items[0].DaysRemaining);
+                Assert.Equal(13, items[0].Quality);
+            }
+
+            [Fact]
+            public void VeryCloseToSellDateUpperBoundAtMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 50 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(4, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void VeryCloseToSellDateUpperBoundNearMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 48 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(4, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void VeryCloseToSellDateLowerBound()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 10 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(0, items[0].DaysRemaining);
+                Assert.Equal(13, items[0].Quality);
+            }
+
+            [Fact]
+            public void VeryCloseToSellDateLowerBoundAtMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 50 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(0, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void VeryCloseToSellDateLowerBoundNearMaxQuality()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 48 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(0, items[0].DaysRemaining);
+                Assert.Equal(50, items[0].Quality);
+            }
+
+            [Fact]
+            public void OnSellDate()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 0, Quality = 50 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-1, items[0].DaysRemaining);
+                Assert.Equal(0, items[0].Quality);
+            }
+
+            [Fact]
+            public void AfterSellDate()
+            {
+                IList<Item> items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = -10, Quality = 10 } };
+                new GildedRose().ProcessEndOfDay(items);
+
+                Assert.Equal(-11, items[0].DaysRemaining);
+                Assert.Equal(0, items[0].Quality);
+            }
         }
 
-        [Fact]
-        public void normalItem_OnSellDateNearMinQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = 0, Quality = 1 } };
-            new GildedRose().ProcessEndOfDay(Items);
 
-            Assert.Equal(-1, Items[0].DaysRemaining);
-            Assert.Equal(0, Items[0].Quality);
-        }
 
-        [Fact]
-        public void normalItem_AfterSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = -10, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-11, Items[0].DaysRemaining);
-            Assert.Equal(8, Items[0].Quality);
-        }
-
-        [Fact]
-        public void normalItem_AfterSellDateWithMinQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = -10, Quality = 0 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-11, Items[0].DaysRemaining);
-            Assert.Equal(0, Items[0].Quality);
-        }
-
-        [Fact]
-        public void normalItem_AfterSellDateNearMinQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "randomstring", DaysRemaining = -10, Quality = 1 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-11, Items[0].DaysRemaining);
-            Assert.Equal(0, Items[0].Quality);
-        }
-
-        [Fact]
-        public void agedCheddar_BeforeSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 5, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(4, Items[0].DaysRemaining);
-            Assert.Equal(11, Items[0].Quality);
-        }
-
-        [Fact]
-        public void agedCheddar_WithMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 5, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(4, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void agedCheddar_OnSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-1, Items[0].DaysRemaining);
-            Assert.Equal(12, Items[0].Quality);
-        }
-
-        [Fact]
-        public void agedCheddar_OnSellDateWithMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-1, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void agedCheddar_OnSellDateNearMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = 0, Quality = 49 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-1, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void agedCheddar_AfterSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-11, Items[0].DaysRemaining);
-            Assert.Equal(12, Items[0].Quality);
-        }
-
-        [Fact]
-        public void agedCheddar_AfterSellDateWithMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-11, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void agedCheddar_AfterSellDateNearMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Aged Cheddar", DaysRemaining = -10, Quality = 49 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-11, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void hammer_BeforeSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 5, Quality = 40 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(5, Items[0].DaysRemaining);
-            Assert.Equal(40, Items[0].Quality);
-        }
-
-        [Fact]
-        public void hammer_OnSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = 0, Quality = 40 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(0, Items[0].DaysRemaining);
-            Assert.Equal(40, Items[0].Quality);
-        }
-
-        [Fact]
-        public void hammer_AfterSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Hammer", DaysRemaining = -10, Quality = 40 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-10, Items[0].DaysRemaining);
-            Assert.Equal(40, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_LongBeforeSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 11, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(10, Items[0].DaysRemaining);
-            Assert.Equal(11, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_LongBeforeSellDateAtMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 11, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(10, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_MediumCloseToSellDateUpperBound()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(9, Items[0].DaysRemaining);
-            Assert.Equal(12, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_MediumCloseToSellDateUpperBoundAtMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(9, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_MediumCloseToSellDateUpperBoundNearMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 10, Quality = 49 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(9, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_MediumCloseToSellDateLowerBound()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(5, Items[0].DaysRemaining);
-            Assert.Equal(12, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_MediumCloseToSellDateLowerBoundAtMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(5, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_MediumCloseToSellDateLowerBoundNearMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 6, Quality = 49 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(5, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_VeryCloseToSellDateUpperBound()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(4, Items[0].DaysRemaining);
-            Assert.Equal(13, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_VeryCloseToSellDateUpperBoundAtMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(4, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_VeryCloseToSellDateUpperBoundNearMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 5, Quality = 48 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(4, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_VeryCloseToSellDateLowerBound()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(0, Items[0].DaysRemaining);
-            Assert.Equal(13, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_VeryCloseToSellDateLowerBoundAtMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(0, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_VeryCloseToSellDateLowerBoundNearMaxQuality()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 1, Quality = 48 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(0, Items[0].DaysRemaining);
-            Assert.Equal(50, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_OnSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = 0, Quality = 50 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-1, Items[0].DaysRemaining);
-            Assert.Equal(0, Items[0].Quality);
-        }
-
-        [Fact]
-        public void concertTickets_AfterSellDate()
-        {
-            IList<Item> Items = new List<Item> { new Item { Name = "Concert Tickets", DaysRemaining = -10, Quality = 10 } };
-            new GildedRose().ProcessEndOfDay(Items);
-
-            Assert.Equal(-11, Items[0].DaysRemaining);
-            Assert.Equal(0, Items[0].Quality);
-        }
     }
 }
