@@ -1,4 +1,4 @@
-namespace ConsoleApplication
+namespace GildedRoseApp.Console
 {
         public class Item
     {

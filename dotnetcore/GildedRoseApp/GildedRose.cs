@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-namespace ConsoleApplication
+﻿using System.Collections.Generic;
+
+namespace GildedRoseApp.Console
 {
     public class GildedRose
     {

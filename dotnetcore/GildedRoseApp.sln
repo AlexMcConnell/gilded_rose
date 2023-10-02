@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRoseApp.Console", "GildedRoseApp\GildedRoseApp.console.csproj", "{32EE0966-7182-47C8-849C-0C092049D667}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRoseApp.Console", "GildedRoseApp\GildedRoseApp.Console.csproj", "{32EE0966-7182-47C8-849C-0C092049D667}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A89DF5F0-03C6-45DF-8507-A223568EDB17}"
 EndProject
