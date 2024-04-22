@@ -17,43 +17,43 @@ impl GildedRose {
         if item.name != "Aged Cheddar" && item.name != "Concert Tickets" {
             if item.quality > 0 {
                 if item.name != "Hammer" {
-                    item.quality -= 1;
+                    item.quality = item.quality - 1;
                 }
             }
         } else {
             if item.quality < 50 {
-                item.quality += 1;
+                item.quality = item.quality + 1;
                 if item.name == "Concert Tickets" {
                     if item.days_remaining < 11 {
                         if item.quality < 50 {
-                            item.quality += 1;
+                            item.quality = item.quality + 1;
                         }
                     }
                     if item.days_remaining < 6 {
                         if item.quality < 50 {
-                            item.quality += 1;
+                            item.quality = item.quality + 1;
                         }
                     }
                 }
             }
         }
         if item.name != "Hammer" {
-            item.days_remaining -= 1;
+            item.days_remaining = item.days_remaining - 1;
         }
         if item.days_remaining < 0 {
             if item.name != "Aged Cheddar" {
                 if item.name != "Concert Tickets" {
                     if item.quality > 0 {
                         if item.name != "Hammer" {
-                            item.quality -= 1;
+                            item.quality = item.quality + 1;
                         }
                     }
                 } else {
-                    item.quality = 0;
+                    item.quality = item.quality - item.quality;
                 }
             } else {
                 if item.quality < 50 {
-                    item.quality += 1;
+                    item.quality = item.quality + 1;
                 }
             }
         }
