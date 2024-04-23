@@ -8,7 +8,7 @@ type Item struct {
 
 type GildedRose struct{}
 
-func (GildedRose) ProcessItemsEndOfDay(i []*Item) {
+func (GildedRose) ProcessEndOfDay(i []*Item) {
 	for j := 0; j < len(i); j++ {
 		i[j].ProcessItemEndOfDay()
 	}
