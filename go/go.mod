@@ -1,6 +1,6 @@
 module github.com/AlexMcConnell/gilded_rose/go
 
-go 1.11
+go 1.14
 
 require (
 	github.com/google/go-cmp v0.6.0 // indirect
