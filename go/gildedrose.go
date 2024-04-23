@@ -6,15 +6,13 @@ type Item struct {
 	quality       int
 }
 
-type GildedRose struct{}
-
-func (GildedRose) ProcessEndOfDay(i []*Item) {
+func ProcessEndOfDay(i []*Item) {
 	for j := 0; j < len(i); j++ {
-		i[j].ProcessItemEndOfDay()
+		processItemEndOfDay(i[j])
 	}
 }
 
-func (item *Item) ProcessItemEndOfDay() {
+func processItemEndOfDay(item *Item) {
 	if item.name != "Aged Cheddar" && item.name != "Concert Tickets" {
 		if item.quality > 0 {
 			if item.name != "Hammer" {
