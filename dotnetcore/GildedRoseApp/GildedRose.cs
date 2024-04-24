@@ -1,32 +1,77 @@
 ﻿using System.Collections.Generic;
 
-namespace GildedRoseApp.Console
-{
-    public class GildedRose
-    {
-        public static void Main(string[] args)
-        {
-            // This method is not used in this exercise.
-            // Please ignore it. 
-        }
+namespace GildedRose;
 
-        public void ProcessEndOfDay(IList<Item> items)
+public class GildedRose
+{
+    public void ProcessEndOfDay(IList<Item> items)
+    {
+        for (int i = 0; i < items.Count; i++)
         {
-            for (int i = 0; i < items.Count; i++) {
-                ProcessEndOfDay(items[i]);
+            ProcessItemsEndOfDay(items[i]);
+        }
+    }
+
+    private void ProcessItemsEndOfDay(Item item)
+    {
+        if (item.Name != "Aged Cheddar" && item.Name != "Concert Tickets")
+        {
+            if (item.Quality > 0)
+            {
+                if (item.Name != "Hammer")
+                {
+                    item.Quality = item.Quality - 1;
+                }
+            }
+        }
+        else
+        {
+            if (item.Quality < 50)
+            {
+                item.Quality = item.Quality + 1;
+                if (item.Name == "Concert Tickets")
+                {
+                    if (item.DaysRemaining < 11)
+                    {
+                        if (item.Quality < 50)
+                        {
+                            item.Quality = item.Quality + 1;
+                        }
+                    }
+
+                    if (item.DaysRemaining < 6)
+                    {
+                        if (item.Quality < 50)
+                        {
+                            item.Quality = item.Quality + 1;
+                        }
+                    }
+                }
             }
         }
 
-        public void ProcessEndOfDay(Item item)
+        if (item.Name != "Hammer")
         {
-            if (item.Name != "Aged Cheddar" && item.Name != "Concert Tickets")
+            item.DaysRemaining = item.DaysRemaining - 1;
+        }
+
+        if (item.DaysRemaining < 0)
+        {
+            if (item.Name != "Aged Cheddar")
             {
-                if (item.Quality > 0)
+                if (item.Name != "Concert Tickets")
                 {
-                    if (item.Name != "Hammer")
+                    if (item.Quality > 0)
                     {
-                        item.Quality = item.Quality - 1;
+                        if (item.Name != "Hammer")
+                        {
+                            item.Quality = item.Quality - 1;
+                        }
                     }
+                }
+                else
+                {
+                    item.Quality = item.Quality - item.Quality;
                 }
             }
             else
@@ -34,54 +79,6 @@ namespace GildedRoseApp.Console
                 if (item.Quality < 50)
                 {
                     item.Quality = item.Quality + 1;
-                    if (item.Name == "Concert Tickets")
-                    {
-                        if (item.DaysRemaining < 11)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality = item.Quality + 1;
-                            }
-                        }
-                        if (item.DaysRemaining < 6)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality = item.Quality + 1;
-                            }
-                        }
-                    }
-                }
-            }
-            if (item.Name != "Hammer")
-            {
-                item.DaysRemaining = item.DaysRemaining - 1;
-            }
-            if (item.DaysRemaining < 0)
-            {
-                if (item.Name != "Aged Cheddar")
-                {
-                    if (item.Name != "Concert Tickets")
-                    {
-                        if (item.Quality > 0)
-                        {
-                            if (item.Name != "Hammer")
-                            {
-                                item.Quality = item.Quality - 1;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        item.Quality = item.Quality - item.Quality;
-                    }
-                }
-                else
-                {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality = item.Quality + 1;
-                    }
                 }
             }
         }
